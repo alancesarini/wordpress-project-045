@@ -19,6 +19,6 @@ while( have_posts() ) {
 get_template_part( 'partials/subscription' );
 ?>
 
-<?php Flaats_Functions::show_search_mobile(); ?>
+<?php Project045_Functions::show_search_mobile(); ?>
 
 <?php get_footer(); 

@@ -10,7 +10,7 @@ while( have_posts() ) {
     the_post();
 }
 
-while( have_rows( '_flaats_membership_text' ) ) {
+while( have_rows( '_project045_membership_text' ) ) {
     the_row();
     $title1 = get_sub_field( 'title1' );
     $title2 = get_sub_field( 'title2' );
@@ -18,7 +18,7 @@ while( have_rows( '_flaats_membership_text' ) ) {
     $text = get_sub_field( 'text' );
 }
 
-$logos_members = get_field( '_flaats_membership_logos' );
+$logos_members = get_field( '_project045_membership_logos' );
 
 ?>
 
@@ -51,7 +51,7 @@ $logos_members = get_field( '_flaats_membership_logos' );
                 
 
                 <div class="current_member">
-                    <h3 class="title"><?php _e( 'Miembros', 'flaats' ); ?></h3>
+                    <h3 class="title"><?php _e( 'Miembros', 'project045' ); ?></h3>
                     <ul>
 
                         <?php foreach( $logos_members as $logo ) { ?>
@@ -64,8 +64,8 @@ $logos_members = get_field( '_flaats_membership_logos' );
             
             <div class="member_application">
             	<div class="member_application_heading">
-                <h2><?php _e( 'Solicitud', 'flaats' ); ?></h2>
-                	<p><?php _e( 'Si es usted un promotor interesado en unirse a la red de DreamHomes, por favor rellene el formulario y un representante se pondrá en contacto con usted en breve.', 'flaats' ); ?></p>
+                <h2><?php _e( 'Solicitud', 'project045' ); ?></h2>
+                	<p><?php _e( 'Si es usted un promotor interesado en unirse a la red de Project045, por favor rellene el formulario y un representante se pondrá en contacto con usted en breve.', 'project045' ); ?></p>
                 </div>
                 
                 <div class="row">

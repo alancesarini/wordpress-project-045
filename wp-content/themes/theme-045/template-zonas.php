@@ -11,12 +11,12 @@ while( have_posts() ) {
 }
 
 
-$query = Flaats_Zona::get_search_results();
+$query = Project045_Zona::get_search_results();
 
 $array_zones = array();
 while( $query->have_posts() ) {
     $query->the_post();
-    $array_zones[] = Flaats_Zona::get_zone_data( get_the_ID() );    			
+    $array_zones[] = Project045_Zona::get_zone_data( get_the_ID() );    			
 }	
 
 
@@ -28,7 +28,7 @@ while( $query->have_posts() ) {
     </div>
 </section>
 
-<?php Flaats_Functions::render_search( 2 ); ?>
+<?php Project045_Functions::render_search( 2 ); ?>
 
 <section class="areas_section">
 	<div class="container">
@@ -56,8 +56,8 @@ while( $query->have_posts() ) {
                                     </li>
                                 <?php } ?>
                         </ul>
-                        <a href="<?php echo pll_home_url(); ?><?php if( 'es' == pll_current_language() ) echo 'promociones'; else echo 'developments'; ?>?z=<?php echo $zone['id']; ?>" class="zonadev"><?php _e( 'VER PROMOCIONES', 'flaats' ); ?></a>
-                        <a href="<?php echo $zone['url']; ?>" class="zona"><?php _e( 'CONOCER LA ZONA', 'flaats' ); ?></a>
+                        <a href="<?php echo pll_home_url(); ?><?php if( 'es' == pll_current_language() ) echo 'promociones'; else echo 'developments'; ?>?z=<?php echo $zone['id']; ?>" class="zonadev"><?php _e( 'VER PROMOCIONES', 'project045' ); ?></a>
+                        <a href="<?php echo $zone['url']; ?>" class="zona"><?php _e( 'CONOCER LA ZONA', 'project045' ); ?></a>
                     </div>
                 </div>
             </div>

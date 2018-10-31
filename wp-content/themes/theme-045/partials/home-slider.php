@@ -6,7 +6,7 @@
 
 <div id="banner" class="owl-carousel">
     
-    <?php while( have_rows( '_flaats_home_slider' ) ) { the_row(); $pic = get_sub_field( 'pic' );?>
+    <?php while( have_rows( '_project045_home_slider' ) ) { the_row(); $pic = get_sub_field( 'pic' );?>
         <div class="item">
             <img src="<?php echo $pic; ?>" alt="slide">
             <div class="banner_content">
@@ -24,16 +24,16 @@
     </div>
 
     <div class="tabs clearfix">
-        <h2><?php if( $mobile_detect->isMobile() ) { _e( 'BUSCAR PROMOCIONES', 'flaats' ); } else { _e( 'BUSCAR EN EL MAPA', 'flaats' ); } ?></h2>    
+        <h2><?php if( $mobile_detect->isMobile() ) { _e( 'BUSCAR PROMOCIONES', 'project045' ); } else { _e( 'BUSCAR EN EL MAPA', 'project045' ); } ?></h2>    
         <div>
             <div class="filter_div clearfix">
-                <?php Flaats_Functions::render_search_developments(); ?>
+                <?php Project045_Functions::render_search_developments(); ?>
             </div>
         </div>
-        <h2><?php _e( 'BUSCAR LIFESTYLE', 'flaats' ); ?></h2>
+        <h2><?php _e( 'BUSCAR LIFESTYLE', 'project045' ); ?></h2>
         <div>
             <div class="filter_div clearfix">
-                <?php Flaats_Functions::render_search_lifestyle(); ?>
+                <?php Project045_Functions::render_search_lifestyle(); ?>
             </div>
         </div>
     </div>

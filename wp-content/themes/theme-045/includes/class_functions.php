@@ -1,8 +1,8 @@
 <?php
 
-if( !class_exists( 'Flaats_Functions' ) ) {
+if( !class_exists( 'Project045_Functions' ) ) {
 
-	class Flaats_Functions {
+	class Project045_Functions {
 
 		private static $_this;
 
@@ -76,7 +76,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
         <div class="topsearch clearfix">
         <div class="first_select">
 					<select id="area" name="zone">
-					<option value="-1"><?php _e( 'Area', 'flaats' ); ?></option>
+					<option value="-1"><?php _e( 'Area', 'project045' ); ?></option>
 				  <?php 
 					$args = array(
 					  'post_type' => 'zona',
@@ -100,7 +100,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
         </div>
         <div class="second_select">
 					<select id="type" name="type">
-					<option value="-1"><?php _e( 'Tipo', 'flaats' ); ?></option>
+					<option value="-1"><?php _e( 'Tipo', 'project045' ); ?></option>
 				  <?php 
 					$types = get_terms( array( 'taxonomy' => 'property_type', 'hide_empty' => false ) );
 					foreach( $types as $type ) {
@@ -113,35 +113,35 @@ if( !class_exists( 'Flaats_Functions' ) ) {
         </div>
         <div class="forth_select">
             <select name="price_min" id="minprice">
-									<option value="0"><?php _e( 'Precio mínimo', 'flaats' ); ?></option>
+									<option value="0"><?php _e( 'Precio mínimo', 'project045' ); ?></option>
 									<?php for( $i = 100000; $i <= 2000000; $i+=50000 ) { ?>
 										<?php if( $i <= 1000000 || 1500000 == $i || 2000000 == $i ) { ?>
-											<option value="<?php echo $i; ?>" <?php if( $i == $params['price_min'] ) echo ' selected'; ?>><?php echo Flaats_Functions::format_price( $i ); ?></option>
+											<option value="<?php echo $i; ?>" <?php if( $i == $params['price_min'] ) echo ' selected'; ?>><?php echo Project045_Functions::format_price( $i ); ?></option>
 										<?php } ?>
 									<?php } ?>
             </select>
         </div>
         <div class="fifth_select">
             <select name="price_max" id="maxprice">
-									<option value="0"><?php _e( 'Precio máximo', 'flaats' ); ?></option>			
+									<option value="0"><?php _e( 'Precio máximo', 'project045' ); ?></option>			
 									<?php for( $i = 150000; $i <= 5000000; $i+=50000 ) { ?>	
 										<?php if( $i <= 1000000 || 1500000 == $i || 2000000 == $i || 2500000 == $i || 3000000 == $i || 5000000 == $i ) { ?>
-											<option value="<?php echo $i; ?>" <?php if( $i == $params['price_max'] ) echo ' selected'; ?>><?php echo Flaats_Functions::format_price( $i ); ?></option>
+											<option value="<?php echo $i; ?>" <?php if( $i == $params['price_max'] ) echo ' selected'; ?>><?php echo Project045_Functions::format_price( $i ); ?></option>
 										<?php } ?>
 									<?php } ?>
             </select>
         </div>
         <div class="filter_search">
-            <input type="submit" name="" value="<?php _e( 'buscar', 'flaats' ); ?>" class="input_search">
+            <input type="submit" name="" value="<?php _e( 'buscar', 'project045' ); ?>" class="input_search">
         </div>
         </div>
         
         <div class="showfilter">
-            <a href="javascript:void(0);" id="showfilter"><?php _e( 'MOSTRAR FILTROS', 'flaats' ); ?> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/select.png" alt="icono"></a>
+            <a href="javascript:void(0);" id="showfilter"><?php _e( 'MOSTRAR FILTROS', 'project045' ); ?> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/select.png" alt="icono"></a>
             <div class="filterfield clearfix" id="showfilterinfo">
                 <div class="rooms">
 								<select id="rooms" name="rooms">
-									<option value="-1"><?php _e( 'Habitaciones', 'flaats' ); ?></option>
+									<option value="-1"><?php _e( 'Habitaciones', 'project045' ); ?></option>
 									<?php for( $i = 1; $i < 6; $i++ ) { ?>	
 									<option value="<?php echo $i; ?>" <?php if( $i == $params['rooms'] ) echo 'selected'; ?> ><?php echo $i; ?></option>
 									<?php } ?>
@@ -186,7 +186,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 				<div class="col-md-6">
 				<div class="progress_br clearfix">
 						<div class="bar_row clearfix">
-								<div class="bar_name"><?php _e( 'VIDA NOCTURNA', 'flaats' ); ?>:</div>
+								<div class="bar_name"><?php _e( 'VIDA NOCTURNA', 'project045' ); ?>:</div>
 								<div class="range_bar">
 										<div>
 											<input type="range" name="nightlife" min="1" max="5" step="1" value="<?php echo $params['nightlife']; ?>" />
@@ -195,7 +195,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 						</div>
 						
 						<div class="bar_row clearfix">
-								<div class="bar_name"><?php _e( 'TIENDAS', 'flaats' ); ?>:</div>
+								<div class="bar_name"><?php _e( 'TIENDAS', 'project045' ); ?>:</div>
 								<div class="range_bar">
 										<div>
 											<input type="range" name="shops" min="1" max="5" step="1" value="<?php echo $params['shops']; ?>" />
@@ -204,7 +204,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 						</div>
 						
 						<div class="bar_row clearfix">
-								<div class="bar_name"><?php _e( 'GOLF', 'flaats' ); ?>:</div>
+								<div class="bar_name"><?php _e( 'GOLF', 'project045' ); ?>:</div>
 								<div class="range_bar">
 										<div>
 											<input type="range" name="golf" min="1" max="5" step="1" value="<?php echo $params['golf']; ?>" />
@@ -213,7 +213,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 						</div>
 						
 						<div class="bar_row clearfix">
-								<div class="bar_name"><?php _e( 'CULTURA', 'flaats' ); ?>:</div>
+								<div class="bar_name"><?php _e( 'CULTURA', 'project045' ); ?>:</div>
 								<div class="range_bar">
 										<div>
 											<input type="range" name="culture" min="1" max="5" step="1" value="<?php echo $params['culture']; ?>" />
@@ -227,7 +227,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 				<div class="col-md-6">
 						<div class="progress_br clearfix">
 						<div class="bar_row clearfix">
-								<div class="bar_name"><?php _e( 'PLAYA / BAÑO', 'flaats' ); ?>:</div>
+								<div class="bar_name"><?php _e( 'PLAYA / BAÑO', 'project045' ); ?>:</div>
 								<div class="range_bar">
 										<div>
 											<input type="range" name="beach" min="1" max="5" step="1" value="<?php echo $params['beach']; ?>" />
@@ -236,7 +236,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 						</div>
 						
 						<div class="bar_row clearfix">
-								<div class="bar_name"><?php _e( 'RESTAURANTES', 'flaats' ); ?>:</div>
+								<div class="bar_name"><?php _e( 'RESTAURANTES', 'project045' ); ?>:</div>
 								<div class="range_bar">
 										<div>
 											<input type="range" name="eating" min="1" max="5" step="1" value="<?php echo $params['eating']; ?>" />
@@ -245,7 +245,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 						</div>
 						
 						<div class="bar_row clearfix">
-								<div class="bar_name"><?php _e( 'PUERTO DEPORTIVO', 'flaats' ); ?>:</div>
+								<div class="bar_name"><?php _e( 'PUERTO DEPORTIVO', 'project045' ); ?>:</div>
 								<div class="range_bar">
 										<div>
 											<input type="range" name="port" min="1" max="5" step="1" value="<?php echo $params['port']; ?>" />
@@ -254,7 +254,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 						</div>
 						
 						<div class="bar_row clearfix">
-								<div class="bar_name"><?php _e( 'FAMILIA', 'flaats' ); ?>:</div>
+								<div class="bar_name"><?php _e( 'FAMILIA', 'project045' ); ?>:</div>
 								<div class="range_bar">
 										<div>
 											<input type="range" name="family" min="1" max="5" step="1" value="<?php echo $params['family']; ?>" />
@@ -265,7 +265,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 						</div>
 				</div>
 
-        <input type="submit" name="" value="<?php _e( 'buscar', 'flaats' ); ?>" class="input_search">				
+        <input type="submit" name="" value="<?php _e( 'buscar', 'project045' ); ?>" class="input_search">				
 
 			</form>		
 		<?php
@@ -292,7 +292,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 						</div>
 						<div class="tabs clearfix">
 			
-	        				<h2><?php if( $mobile_detect->isMobile() ) { _e( 'BUSCAR PROMOCIONES', 'flaats' ); } else { _e( 'BUSCAR EN EL MAPA', 'flaats' ); } ?></h2>
+	        				<h2><?php if( $mobile_detect->isMobile() ) { _e( 'BUSCAR PROMOCIONES', 'project045' ); } else { _e( 'BUSCAR EN EL MAPA', 'project045' ); } ?></h2>
 							<div>
 								<div class="filter_div clearfix">
 									<form action="<?php echo pll_home_url(); ?><?php if( 'es' == pll_current_language() ) echo 'buscar-en-el-mapa'; else echo 'find-on-map'; ?>" method="GET">
@@ -300,7 +300,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 										<div class="topsearch clearfix">
 											<div class="first_select">
 												<select id="area" name="zone">
-													<option value="-1"><?php _e( 'Area', 'flaats' ); ?></option>
+													<option value="-1"><?php _e( 'Area', 'project045' ); ?></option>
 													<?php 
 													$args = array(
 													'post_type' => 'zona',
@@ -326,7 +326,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 
 											<div class="second_select">
 												<select id="type" name="type">
-													<option value="-1"><?php _e( 'Tipo', 'flaats' ); ?></option>
+													<option value="-1"><?php _e( 'Tipo', 'project045' ); ?></option>
 													<?php 
 													$types = get_terms( array( 'taxonomy' => 'property_type', 'hide_empty' => false ) );
 													foreach( $types as $type ) {
@@ -340,36 +340,36 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 
 											<div class="forth_select">
 												<select name="price_min" id="minprice">
-																		<option value="0"><?php _e( 'Precio mínimo', 'flaats' ); ?></option>
+																		<option value="0"><?php _e( 'Precio mínimo', 'project045' ); ?></option>
 																		<?php for( $i = 100000; $i <= 2000000; $i+=50000 ) { ?>
 																			<?php if( $i <= 1000000 || 1500000 == $i || 2000000 == $i ) { ?>
-																				<option value="<?php echo $i; ?>" <?php if( $i == $params['price_min'] ) echo ' selected'; ?>><?php echo Flaats_Functions::format_price( $i ); ?></option>
+																				<option value="<?php echo $i; ?>" <?php if( $i == $params['price_min'] ) echo ' selected'; ?>><?php echo Project045_Functions::format_price( $i ); ?></option>
 																			<?php } ?>
 																		<?php } ?>
 												</select>
 											</div>
 											<div class="fifth_select">
 												<select name="price_max" id="maxprice">
-																		<option value="0"><?php _e( 'Precio máximo', 'flaats' ); ?></option>			
+																		<option value="0"><?php _e( 'Precio máximo', 'project045' ); ?></option>			
 																		<?php for( $i = 150000; $i <= 5000000; $i+=50000 ) { ?>	
 																			<?php if( $i <= 1000000 || 1500000 == $i || 2000000 == $i || 2500000 == $i || 3000000 == $i || 5000000 == $i ) { ?>
-																				<option value="<?php echo $i; ?>" <?php if( $i == $params['price_max'] ) echo ' selected'; ?>><?php echo Flaats_Functions::format_price( $i ); ?></option>
+																				<option value="<?php echo $i; ?>" <?php if( $i == $params['price_max'] ) echo ' selected'; ?>><?php echo Project045_Functions::format_price( $i ); ?></option>
 																			<?php } ?>
 																		<?php } ?>
 												</select>
 											</div>
 
 											<div class="filter_search">
-												<input type="submit" name="" value="<?php _e( 'BUSCAR', 'flaats' ); ?>" class="input_search">
+												<input type="submit" name="" value="<?php _e( 'BUSCAR', 'project045' ); ?>" class="input_search">
 											</div>
 										</div>
 						
 										<div class="showfilter">
-											<a href="javascript:void(0);" id="showfilter"><?php _e( 'MOSTRAR FILTROS', 'flaats' ); ?> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/select.png" alt="icono"></a>
+											<a href="javascript:void(0);" id="showfilter"><?php _e( 'MOSTRAR FILTROS', 'project045' ); ?> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/select.png" alt="icono"></a>
 											<div class="filterfield clearfix" id="showfilterinfo">
 												<div class="rooms">
 													<select id="rooms" name="rooms">
-														<option value="-1"><?php _e( 'Habitaciones', 'flaats' ); ?></option>														
+														<option value="-1"><?php _e( 'Habitaciones', 'project045' ); ?></option>														
 														<?php for( $i = 1; $i < 6; $i++ ) { ?>
 														<option value="<?php echo $i; ?>" <?php if( $i == $params['rooms'] ) echo 'selected'; ?> ><?php echo $i; ?></option>
 														<?php } ?>
@@ -399,7 +399,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 								</div>
 							</div>
 
-							<h2 <?php if( 2 == $active_tab ) { ?>class="active-tab"<?php } ?>><?php _e( 'BUSCAR LIFESTYLE', 'flaats' ); ?></h2>	
+							<h2 <?php if( 2 == $active_tab ) { ?>class="active-tab"<?php } ?>><?php _e( 'BUSCAR LIFESTYLE', 'project045' ); ?></h2>	
 							<div <?php if( 2 == $active_tab ) { ?>class="active-panel"<?php } ?>>
 								<div class="filter_div clearfix">
 									<form action="<?php echo pll_home_url(); ?><?php if( 'es' == pll_current_language() ) echo 'areas-es'; else echo 'areas'; ?>" method="GET">							
@@ -408,7 +408,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 											<div class="progress_br clearfix">
 
 												<div class="bar_row clearfix">
-													<div class="bar_name"><?php _e( 'VIDA NOCTURNA', 'flaats' ); ?>:</div>
+													<div class="bar_name"><?php _e( 'VIDA NOCTURNA', 'project045' ); ?>:</div>
 													<div class="range_bar">
 														<div>
 															<input type="range" name="nightlife" min="1" max="5" step="1" value="<?php echo $params['nightlife']; ?>" />
@@ -417,7 +417,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 												</div>
 						
 												<div class="bar_row clearfix">
-													<div class="bar_name"><?php _e( 'TIENDAS', 'flaats' ); ?>:</div>
+													<div class="bar_name"><?php _e( 'TIENDAS', 'project045' ); ?>:</div>
 													<div class="range_bar">
 														<div>
 															<input type="range" name="shops" min="1" max="5" step="1" value="<?php echo $params['shops']; ?>" />
@@ -426,7 +426,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 												</div>
 						
 												<div class="bar_row clearfix">
-													<div class="bar_name"><?php _e( 'GOLF', 'flaats' ); ?>:</div>
+													<div class="bar_name"><?php _e( 'GOLF', 'project045' ); ?>:</div>
 													<div class="range_bar">
 														<div>
 															<input type="range" name="golf" min="1" max="5" step="1" value="<?php echo $params['golf']; ?>" />
@@ -435,7 +435,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 												</div>
 												
 												<div class="bar_row clearfix">
-													<div class="bar_name"><?php _e( 'CULTURA', 'flaats' ); ?>:</div>
+													<div class="bar_name"><?php _e( 'CULTURA', 'project045' ); ?>:</div>
 													<div class="range_bar">
 														<div>
 															<input type="range" name="culture" min="1" max="5" step="1" value="<?php echo $params['culture']; ?>" />
@@ -449,7 +449,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 										<div class="col-md-6">
 											<div class="progress_br clearfix">
 												<div class="bar_row clearfix">
-													<div class="bar_name"><?php _e( 'PLAYA / BAÑO', 'flaats' ); ?>:</div>
+													<div class="bar_name"><?php _e( 'PLAYA / BAÑO', 'project045' ); ?>:</div>
 													<div class="range_bar">
 														<div>
 															<input type="range" name="beach" min="1" max="5" step="1" value="<?php echo $params['beach']; ?>" />
@@ -458,7 +458,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 												</div>
 												
 												<div class="bar_row clearfix">
-													<div class="bar_name"><?php _e( 'RESTAURANTES', 'flaats' ); ?>:</div>
+													<div class="bar_name"><?php _e( 'RESTAURANTES', 'project045' ); ?>:</div>
 													<div class="range_bar">
 														<div>
 															<input type="range" name="eating" min="1" max="5" step="1" value="<?php echo $params['eating']; ?>" />
@@ -467,7 +467,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 												</div>
 												
 												<div class="bar_row clearfix">
-													<div class="bar_name"><?php _e( 'PUERTO DEPORTIVO', 'flaats' ); ?>:</div>
+													<div class="bar_name"><?php _e( 'PUERTO DEPORTIVO', 'project045' ); ?>:</div>
 													<div class="range_bar">
 														<div>
 															<input type="range" name="port" min="1" max="5" step="1" value="<?php echo $params['port']; ?>" />
@@ -476,7 +476,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 												</div>
 												
 												<div class="bar_row clearfix">
-													<div class="bar_name"><?php _e( 'FAMILIA', 'flaats' ); ?>:</div>
+													<div class="bar_name"><?php _e( 'FAMILIA', 'project045' ); ?>:</div>
 													<div class="range_bar">
 														<div>
 															<input type="range" name="family" min="1" max="5" step="1" value="<?php echo $params['family']; ?>" />
@@ -487,7 +487,7 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 											</div>
 										</div>
 
-        								<input type="submit" name="" value="<?php _e( 'buscar', 'flaats' ); ?>" class="input_search">	
+        								<input type="submit" name="" value="<?php _e( 'buscar', 'project045' ); ?>" class="input_search">	
 									</form>
 								</div>
 							</div>
@@ -527,11 +527,11 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 					}
 					$html .= "</ul>";
 				} else {
-					$html = __( 'Aún no has guardado ningún favorito.', 'flaats' );
+					$html = __( 'Aún no has guardado ningún favorito.', 'project045' );
 				}
 			} else {
-				$html = "<a href='#' class='login button-login' data-toggle='modal'>" . __( 'ACCEDER', 'flaats' ) . "</a>";
-				$html .= "<a href='#' class='signup button-register' data-toggle='modal'>" . __( 'REGISTRO', 'flaats' ) . "</a>";
+				$html = "<a href='#' class='login button-login' data-toggle='modal'>" . __( 'ACCEDER', 'project045' ) . "</a>";
+				$html .= "<a href='#' class='signup button-register' data-toggle='modal'>" . __( 'REGISTRO', 'project045' ) . "</a>";
 			}
 			?>
 
@@ -612,9 +612,9 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 		function render_rooms_literal( $number ) {
 
 			if( $number > 1 ) {
-				_e( 'habs', 'flaats' );
+				_e( 'habs', 'project045' );
 			} else {
-				_e( 'hab', 'flaats' );				
+				_e( 'hab', 'project045' );				
 			}
 
 		}
@@ -652,4 +652,4 @@ if( !class_exists( 'Flaats_Functions' ) ) {
 
 }
 
-new Flaats_Functions();
+new Project045_Functions();

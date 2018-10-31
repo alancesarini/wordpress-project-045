@@ -2,7 +2,7 @@
 
 <section class="pagebanner" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/banner-news.jpg)">
 	<div class="container">
-    	<h1><?php _e( 'Noticias', 'flaats' ); ?></h1>
+    	<h1><?php _e( 'Noticias', 'project045' ); ?></h1>
     </div>
 </section>
 
@@ -23,7 +23,7 @@
                 <div class="caption">
                     <span><?php the_time('j M Y'); ?></span>
                     <h2><?php the_title(); ?></h2>
-                    <p class="group inner list-group-item-text"><?php echo Flaats_Functions::get_excerpt( get_the_ID() ); ?></p>
+                    <p class="group inner list-group-item-text"><?php echo Project045_Functions::get_excerpt( get_the_ID() ); ?></p>
                 <ul>
                     <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon-comments.png" alt="icon"> <?php echo get_comments_number( get_the_ID() ); ?></li>
                 </ul>
@@ -45,7 +45,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <?php _e( 'No hemos encontrado ninguna noticia.', 'flaats' ); ?>
+                    <?php _e( 'No hemos encontrado ninguna noticia.', 'project045' ); ?>
                 </div>
             </div>
 

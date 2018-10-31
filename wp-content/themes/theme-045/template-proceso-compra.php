@@ -12,7 +12,7 @@ while( have_posts() ) {
 
 $array_data = array();
 for( $i = 1; $i < 8; $i++ ) {
-    while( have_rows( '_flaats_purchase_step' . $i ) ) {
+    while( have_rows( '_project045_purchase_step' . $i ) ) {
         the_row();
         $title = get_sub_field( 'title' );
         $text = get_sub_field( 'text' );
@@ -23,11 +23,11 @@ for( $i = 1; $i < 8; $i++ ) {
     }
 }
 
-$title_top1 = get_field( '_flaats_purchase_intro_title1' );
-$title_top2 = get_field( '_flaats_purchase_intro_title2' );
-$title_top3 = get_field( '_flaats_purchase_intro_title3' );
-$title_bottom1 = get_field( '_flaats_purchase_footer_title1' );
-$title_bottom2 = get_field( '_flaats_purchase_footer_title2' );
+$title_top1 = get_field( '_project045_purchase_intro_title1' );
+$title_top2 = get_field( '_project045_purchase_intro_title2' );
+$title_top3 = get_field( '_project045_purchase_intro_title3' );
+$title_bottom1 = get_field( '_project045_purchase_footer_title1' );
+$title_bottom2 = get_field( '_project045_purchase_footer_title2' );
 
 
 ?>

@@ -1,8 +1,8 @@
 <?php
 
-if( !class_exists( 'Flaats_Development' ) ) {
+if( !class_exists( 'Project045_Development' ) ) {
 	
-	class Flaats_Development {
+	class Project045_Development {
 
 		private static $_version;
 
@@ -15,7 +15,7 @@ if( !class_exists( 'Flaats_Development' ) ) {
 
 			self::$_version = '1.0.0';
 
-			self::$prefix = '_flaats_promo_';
+			self::$prefix = '_project045_promo_';
 
 			// Register CPT
 			add_action( 'init', array( $this, 'register_cpt' ) );	
@@ -119,7 +119,7 @@ if( !class_exists( 'Flaats_Development' ) ) {
 					$zone_id = intval( $_GET['zone'] );
 				}
 				$args['meta_query'][] = array(
-					'key' => '_flaats_promo_zone',
+					'key' => '_project045_promo_zone',
 					'value' => $zone_id,
 					'compare' => '='
 				);
@@ -148,7 +148,7 @@ if( !class_exists( 'Flaats_Development' ) ) {
 					$args['meta_query']['relation'] = 'AND';
 				}
 				$args['meta_query'][] = array(
-					'key' => '_flaats_promo_data_price_min',
+					'key' => '_project045_promo_data_price_min',
 					'value' => intval( $_GET['price_min'] ),
 					'type' => 'numeric',
 					'compare' => '>='
@@ -160,7 +160,7 @@ if( !class_exists( 'Flaats_Development' ) ) {
 					$args['meta_query']['relation'] = 'AND';					
 				}
 				$args['meta_query'][] = array(
-					'key' => '_flaats_promo_data_price_min',
+					'key' => '_project045_promo_data_price_min',
 					'value' => intval( $_GET['price_max'] ),
 					'type' => 'numeric',					
 					'compare' => '<='
@@ -172,7 +172,7 @@ if( !class_exists( 'Flaats_Development' ) ) {
 					$args['meta_query']['relation'] = 'AND';					
 				}
 				$args['meta_query'][] = array(
-					'key' => '_flaats_promo_data_rooms_min',
+					'key' => '_project045_promo_data_rooms_min',
 					'value' => intval( $_GET['rooms'] ),
 					'type' => 'numeric',					
 					'compare' => '>='
@@ -245,7 +245,7 @@ if( !class_exists( 'Flaats_Development' ) ) {
 
 			if( intval( $zone_id ) > 0 ) {
 				$args['meta_query']['zone'] = array(
-					'key'     => '_flaats_promo_zone',
+					'key'     => '_project045_promo_zone',
 					'value'   => $zone_id,
 					'compare' => '=',								
 				);
@@ -261,7 +261,7 @@ if( !class_exists( 'Flaats_Development' ) ) {
 			switch( $orderby ) {
 				case 1:
 					$args['meta_query']['price'] = array(
-						'key'     => '_flaats_promo_data_price_min',
+						'key'     => '_project045_promo_data_price_min',
 						'compare' => 'EXISTS',
 						'type'	  => 'NUMERIC'
 					);				
@@ -269,7 +269,7 @@ if( !class_exists( 'Flaats_Development' ) ) {
 						'price' => 'ASC'
 					);
 
-					//$args['meta_key'] = '_flaats_promo_data_price_min';
+					//$args['meta_key'] = '_project045_promo_data_price_min';
 					//$args['order'] = 'ASC';
 					//$args['orderby'] = 'meta_value';
 					break;
@@ -277,7 +277,7 @@ if( !class_exists( 'Flaats_Development' ) ) {
 					$meta_order = array(
 						'size' => 'ASC'
 					);
-					$args['meta_key'] = '_flaats_promo_data_size_min';
+					$args['meta_key'] = '_project045_promo_data_size_min';
 					$args['order'] = 'ASC';
 					$args['orderby'] = 'meta_value';					
 					break;
@@ -285,7 +285,7 @@ if( !class_exists( 'Flaats_Development' ) ) {
 					$meta_order = array(
 						'rooms' => 'ASC'
 					);
-					$args['meta_key'] = '_flaats_promo_data_rooms_min';
+					$args['meta_key'] = '_project045_promo_data_rooms_min';
 					$args['order'] = 'ASC';
 					$args['orderby'] = 'meta_value';					
 					break;		
@@ -293,7 +293,7 @@ if( !class_exists( 'Flaats_Development' ) ) {
 					$meta_order = array(
 						'featured' => 'DESC'
 					);
-					$args['meta_key'] = '_flaats_promo_data_featured';
+					$args['meta_key'] = '_project045_promo_data_featured';
 					$args['order'] = 'DESC';
 					$args['orderby'] = 'meta_value';					
 			}	
@@ -309,11 +309,11 @@ if( !class_exists( 'Flaats_Development' ) ) {
 		/*-----------------------------------------------------------------------------------*/		
 		function get_development_data( $development_id ) {
 
-			$zone_id = get_field( '_flaats_promo_zone', $development_id );
-			$excerpt = Flaats_Functions::get_excerpt( $development_id );	
-			$excerpt_short = Flaats_Functions::get_excerpt( $development_id, 15 );	
+			$zone_id = get_field( '_project045_promo_zone', $development_id );
+			$excerpt = Project045_Functions::get_excerpt( $development_id );	
+			$excerpt_short = Project045_Functions::get_excerpt( $development_id, 15 );	
 			$name = get_the_title( $development_id );
-			$content = Flaats_Functions::get_the_content_by_id( $development_id );
+			$content = Project045_Functions::get_the_content_by_id( $development_id );
 			$url = get_the_permalink( $development_id );
 
 			// In the spanish version, get some data from the english developments
@@ -321,7 +321,7 @@ if( !class_exists( 'Flaats_Development' ) ) {
 				$development_id = pll_get_post( $development_id, 'en' );
 			}
 
-			$coordinates = get_field( '_flaats_promo_location', $development_id );
+			$coordinates = get_field( '_project045_promo_location', $development_id );
 			$lat = $coordinates['lat'];
 			$lng = $coordinates['lng'];   
 			$_zone = get_post( $zone_id ); 
@@ -329,15 +329,15 @@ if( !class_exists( 'Flaats_Development' ) ) {
 			$thumbnail_featured_small = get_the_post_thumbnail_url( $development_id, 'featured-promo-small' );
 			$thumbnail_list = get_the_post_thumbnail_url( $development_id, 'promo-list' );
 			$thumbnail_list_big = get_the_post_thumbnail_url( $development_id, 'promo-list-big' );
-			$price_min = get_field( '_flaats_promo_data_price_min', $development_id );
-			$price_max = get_field( '_flaats_promo_data_price_max', $development_id );
-			$rooms_min = get_field( '_flaats_promo_data_rooms_min', $development_id );
-			$rooms_max = get_field( '_flaats_promo_data_rooms_max', $development_id );
-			$size_min = get_field( '_flaats_promo_data_size_min', $development_id );			
-			$size_max = get_field( '_flaats_promo_data_size_max', $development_id );			
-			$construction_started = get_field( '_flaats_promo_data_construction_started', $development_id );	
-			$featured = get_field( '_flaats_promo_data_featured', $development_id );			
-			$ref = get_field( '_flaats_promo_data_ref', $development_id );		
+			$price_min = get_field( '_project045_promo_data_price_min', $development_id );
+			$price_max = get_field( '_project045_promo_data_price_max', $development_id );
+			$rooms_min = get_field( '_project045_promo_data_rooms_min', $development_id );
+			$rooms_max = get_field( '_project045_promo_data_rooms_max', $development_id );
+			$size_min = get_field( '_project045_promo_data_size_min', $development_id );			
+			$size_max = get_field( '_project045_promo_data_size_max', $development_id );			
+			$construction_started = get_field( '_project045_promo_data_construction_started', $development_id );	
+			$featured = get_field( '_project045_promo_data_featured', $development_id );			
+			$ref = get_field( '_project045_promo_data_ref', $development_id );		
 
 			$development_data = array( 
 				'id' => $development_id,
@@ -355,7 +355,7 @@ if( !class_exists( 'Flaats_Development' ) ) {
 				'thumbnail_featured_small' => $thumbnail_featured_small,
 				'thumbnail_list' => $thumbnail_list,				
 				'thumbnail_list_big' => $thumbnail_list_big,				
-				'price_min' => Flaats_Functions::format_price( $price_min ),
+				'price_min' => Project045_Functions::format_price( $price_min ),
 				'price_max' => $price_max,
 				'rooms_min' => $rooms_min,
 				'rooms_max' => $rooms_max,
@@ -395,7 +395,7 @@ if( !class_exists( 'Flaats_Development' ) ) {
 				if( 'es' == pll_current_language() ) {
 					$promo_id = pll_get_post( $promo_id, 'en' );					
 				}
-				while( have_rows( '_flaats_promo_pdf', $promo_id ) ) {
+				while( have_rows( '_project045_promo_pdf', $promo_id ) ) {
 					the_row();
 					$pdf_url = get_sub_field( 'dossier' );
 				}
@@ -439,9 +439,9 @@ if( !class_exists( 'Flaats_Development' ) ) {
 		function send_email_witei( $name, $email, $phone, $promo_witei ) {
 
 			if( $promo_witei != '' ) {
-				$from = Flaats_Definitions::$email_from;
-				$to = Flaats_Definitions::$witei_inbox;
-				$subject = 'Email de Dreamhomes para Witei';
+				$from = Project045_Definitions::$email_from;
+				$to = Project045_Definitions::$witei_inbox;
+				$subject = 'Email de Project045 para XXX';
 
 				$message = "-------------------\nNombre: $name \nTelefono: $phone \nEmail: $email \nReferencia: $promo_witei \n-------------------";
 
@@ -454,7 +454,7 @@ if( !class_exists( 'Flaats_Development' ) ) {
 				*/
 
 
-				$headers = 'From: DreamHomes <' . Flaats_Definitions::$email_from . '>';
+				$headers = 'From: Project045 <' . Project045_Definitions::$email_from . '>';
 				wp_mail( $to, $subject, $message, $headers );
 				wp_mail( 'aruiz@blogestudio.com', $subject, $message, $headers );
 			} 
@@ -464,4 +464,4 @@ if( !class_exists( 'Flaats_Development' ) ) {
 	}
 }
 
-new Flaats_Development();
+new Project045_Development();

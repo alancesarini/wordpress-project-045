@@ -1,8 +1,8 @@
 <?php
 
-if( !class_exists( 'Flaats_Configuration' ) ) {
+if( !class_exists( 'Project045_Configuration' ) ) {
 
-	class Flaats_Configuration {
+	class Project045_Configuration {
 
 		private static $_this;
 
@@ -16,7 +16,7 @@ if( !class_exists( 'Flaats_Configuration' ) ) {
 
 			self::$_version = '1.0.0';
 
-			self::$prefix = '_flaats_';
+			self::$prefix = '_project045_';
 
 			/*-----------------------------------------------------------------------------------*/
 			// Add support for thumbnails
@@ -150,11 +150,11 @@ if( !class_exists( 'Flaats_Configuration' ) ) {
 			$user_email = $the_user->user_email;
 			$user_name = $the_user->first_name . ' ' . $the_user->last_name;
 
-			$from = Flaats_Definitions::$email_from;
-			$to = Flaats_Definitions::$email_from;
+			$from = Project045_Definitions::$email_from;
+			$to = Project045_Definitions::$email_from;
 			$subject = 'Nuevo registro de usuario';
 			$message = "Nombre: " . $user_name . "\nEmail: " . $user_email;
-			$headers = 'From: DreamHomes <' . Flaats_Definitions::$email_from . '>';
+			$headers = 'From: Project045 <' . Project045_Definitions::$email_from . '>';
 			wp_mail( $to, $subject, $message, $headers );	
 
 		}	
@@ -177,7 +177,7 @@ if( !class_exists( 'Flaats_Configuration' ) ) {
 		/*-----------------------------------------------------------------------------------*/																											
 		function load_textdomain() {
 
-			load_theme_textdomain( 'flaats', get_template_directory() . '/lang' );
+			load_theme_textdomain( 'project045', get_template_directory() . '/lang' );
 
 		}		
 
@@ -194,7 +194,7 @@ if( !class_exists( 'Flaats_Configuration' ) ) {
 			wp_localize_script( 'ajax-login-script', 'ajax_login_object', array( 
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 				'redirecturl' => home_url( $wp->request ),
-				'loadingmessage' => __( 'Enviando información. Por favor espere...', 'flaats' )
+				'loadingmessage' => __( 'Enviando información. Por favor espere...', 'project045' )
 			));
 		
 		}
@@ -207,7 +207,7 @@ if( !class_exists( 'Flaats_Configuration' ) ) {
 
 			check_ajax_referer( 'ajax-login-nonce', 'security' );
 		
-			self::auth_user_login($_POST['username'], $_POST['password'], __( 'Acceso', 'flaats' ) );
+			self::auth_user_login($_POST['username'], $_POST['password'], __( 'Acceso', 'project045' ) );
 		
 			die();
 		}	
@@ -234,11 +234,11 @@ if( !class_exists( 'Flaats_Configuration' ) ) {
 				if(in_array('empty_user_login', $error))
 					echo json_encode(array('loggedin'=>false, 'message'=>__($user_register->get_error_message('empty_user_login'))));
 				elseif(in_array('existing_user_login',$error))
-					echo json_encode(array('loggedin'=>false, 'message'=>__('El nombre de usuario ya existe.', 'flaats' )));
+					echo json_encode(array('loggedin'=>false, 'message'=>__('El nombre de usuario ya existe.', 'project045' )));
 				elseif(in_array('existing_user_email',$error))
-				echo json_encode(array('loggedin'=>false, 'message'=>__('La dirección de email ya existe.', 'flaats' )));
+				echo json_encode(array('loggedin'=>false, 'message'=>__('La dirección de email ya existe.', 'project045' )));
 			} else {			
-			  	self::auth_user_login($info['nickname'], $info['user_pass'], __( 'Registro', 'flaats' ) );       
+			  	self::auth_user_login($info['nickname'], $info['user_pass'], __( 'Registro', 'project045' ) );       
 			}
 		 
 			die();
@@ -255,10 +255,10 @@ if( !class_exists( 'Flaats_Configuration' ) ) {
 			
 			$user_signon = wp_signon( $info, false );
 			if ( is_wp_error($user_signon) ){
-				echo json_encode(array('loggedin'=>false, 'message'=>__('Nombre de usuario o contraseña incorrecta.', 'flaats')));
+				echo json_encode(array('loggedin'=>false, 'message'=>__('Nombre de usuario o contraseña incorrecta.', 'project045')));
 			} else {
 				wp_set_current_user($user_signon->ID); 
-				echo json_encode(array('loggedin'=>true, 'message'=>__($login.' con éxito, redirigiendo...', 'flaats' )));
+				echo json_encode(array('loggedin'=>true, 'message'=>__($login.' con éxito, redirigiendo...', 'project045' )));
 			}
 			
 			die();
@@ -276,22 +276,22 @@ if( !class_exists( 'Flaats_Configuration' ) ) {
 			$account = $_POST['user_login'];
 			
 			if( empty( $account ) ) {
-				$error = __( 'Introduzca su nombre de usuario o email.', 'flaats' );
+				$error = __( 'Introduzca su nombre de usuario o email.', 'project045' );
 			} else {
 				if(is_email( $account )) {
 					if( email_exists($account) ) 
 						$get_by = 'email';
 					else	
-						$error = __( 'No existe ningún usuario registrado con ese email.', 'flaats' );		
+						$error = __( 'No existe ningún usuario registrado con ese email.', 'project045' );		
 				}
 				else if (validate_username( $account )) {
 					if( username_exists($account) ) 
 						$get_by = 'login';
 					else	
-						$error = __( 'No existe ningún usuario registrado con ese nombre.', 'flaats' );				
+						$error = __( 'No existe ningún usuario registrado con ese nombre.', 'project045' );				
 				}
 				else
-					$error = __( 'Nombre de usuario o email incorrecto.', 'flaats' );		
+					$error = __( 'Nombre de usuario o email incorrecto.', 'project045' );		
 			}	
 			
 			if(empty ($error)) {
@@ -319,10 +319,10 @@ if( !class_exists( 'Flaats_Configuration' ) ) {
 					}
 					
 					$to = $user->user_email;
-					$subject = __( 'Su nueva contrasña', 'flaats' );
+					$subject = __( 'Su nueva contrasña', 'project045' );
 					$sender = 'From: '.get_option('name').' <'.$from.'>' . "\r\n";
 					
-					$message = __( 'Su nueva contraseña es: ', 'flaats' ) . $random_password;
+					$message = __( 'Su nueva contraseña es: ', 'project045' ) . $random_password;
 						
 					$headers[] = 'MIME-Version: 1.0' . "\r\n";
 					$headers[] = 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
@@ -331,11 +331,11 @@ if( !class_exists( 'Flaats_Configuration' ) ) {
 						
 					$mail = wp_mail( $to, $subject, $message, $headers );
 					if( $mail ) 
-						$success = __( 'Compruebe su buzón de correo. Le hemos enviado su nueva contraseña.', 'flaats' );
+						$success = __( 'Compruebe su buzón de correo. Le hemos enviado su nueva contraseña.', 'project045' );
 					else
-						$error = __( 'Ha ocurrido un error al intentar enviarle email con su contraseña.', 'flaats' );					
+						$error = __( 'Ha ocurrido un error al intentar enviarle email con su contraseña.', 'project045' );					
 				} else {
-					$error = __( 'Ha ocurrido un error.', 'flaats' );
+					$error = __( 'Ha ocurrido un error.', 'project045' );
 				}
 			}
 			
@@ -364,20 +364,20 @@ if( !class_exists( 'Flaats_Configuration' ) ) {
 		/*-----------------------------------------------------------------------------------*/
 		function load_js_css() {
 
-			wp_register_script( 'fontawesome-all', get_stylesheet_directory_uri() . '/js/fontawesome-all.min.js', array( 'jquery' ), Flaats_Definitions::$scripts_version, true );
-			wp_register_script( 'owl', get_stylesheet_directory_uri() . '/js/owl.carousel.min.js', array( 'jquery' ), Flaats_Definitions::$scripts_version, true );
-			wp_register_script( 'selectric', get_stylesheet_directory_uri() . '/js/jquery.selectric.min.js', array( 'jquery' ), Flaats_Definitions::$scripts_version, true );
-			wp_register_script( 'select', get_stylesheet_directory_uri() . '/js/select.min.js', array( 'jquery' ), Flaats_Definitions::$scripts_version, true );
-			wp_register_script( 'jquery-ui', get_stylesheet_directory_uri() . '/js/jquery-ui.min.js', array( 'jquery' ), Flaats_Definitions::$scripts_version, true );
-			wp_register_script( 'tab_menu', get_stylesheet_directory_uri() . '/js/tab_menu.min.js', array( 'jquery' ), Flaats_Definitions::$scripts_version, true );
-			wp_register_script( 'aos', get_stylesheet_directory_uri() . '/js/aos.min.js', array( 'jquery' ), Flaats_Definitions::$scripts_version, true );
-			wp_register_script( 'rangeslider', get_stylesheet_directory_uri() . '/js/rangeslider.min.js', array( 'jquery' ), Flaats_Definitions::$scripts_version, true );
-			wp_register_script( 'bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), Flaats_Definitions::$scripts_version, true );
-			wp_register_script( 'easymap', get_stylesheet_directory_uri() . '/js/easymap.plugin.min.js', array( 'jquery' ), Flaats_Definitions::$scripts_version, true );
-			wp_register_script( 'markerclusterer', get_stylesheet_directory_uri() . '/js/markerclusterer.min.js', array(), Flaats_Definitions::$scripts_version, true );
-			wp_register_script( 'customscrollbar', get_stylesheet_directory_uri() . '/js/jquery.mCustomScrollbar.concat.min.js', array( 'jquery' ), Flaats_Definitions::$scripts_version, true );
-			wp_register_script( 'ddslick', get_stylesheet_directory_uri() . '/js/jquery.ddslick.min.js', array( 'jquery' ), Flaats_Definitions::$scripts_version, true );
-			wp_register_script( 'flaats-main', get_stylesheet_directory_uri() . '/js/main.min.js', array( 'jquery' ), Flaats_Definitions::$scripts_version, true );
+			wp_register_script( 'fontawesome-all', get_stylesheet_directory_uri() . '/js/fontawesome-all.min.js', array( 'jquery' ), Project045_Definitions::$scripts_version, true );
+			wp_register_script( 'owl', get_stylesheet_directory_uri() . '/js/owl.carousel.min.js', array( 'jquery' ), Project045_Definitions::$scripts_version, true );
+			wp_register_script( 'selectric', get_stylesheet_directory_uri() . '/js/jquery.selectric.min.js', array( 'jquery' ), Project045_Definitions::$scripts_version, true );
+			wp_register_script( 'select', get_stylesheet_directory_uri() . '/js/select.min.js', array( 'jquery' ), Project045_Definitions::$scripts_version, true );
+			wp_register_script( 'jquery-ui', get_stylesheet_directory_uri() . '/js/jquery-ui.min.js', array( 'jquery' ), Project045_Definitions::$scripts_version, true );
+			wp_register_script( 'tab_menu', get_stylesheet_directory_uri() . '/js/tab_menu.min.js', array( 'jquery' ), Project045_Definitions::$scripts_version, true );
+			wp_register_script( 'aos', get_stylesheet_directory_uri() . '/js/aos.min.js', array( 'jquery' ), Project045_Definitions::$scripts_version, true );
+			wp_register_script( 'rangeslider', get_stylesheet_directory_uri() . '/js/rangeslider.min.js', array( 'jquery' ), Project045_Definitions::$scripts_version, true );
+			wp_register_script( 'bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), Project045_Definitions::$scripts_version, true );
+			wp_register_script( 'easymap', get_stylesheet_directory_uri() . '/js/easymap.plugin.min.js', array( 'jquery' ), Project045_Definitions::$scripts_version, true );
+			wp_register_script( 'markerclusterer', get_stylesheet_directory_uri() . '/js/markerclusterer.min.js', array(), Project045_Definitions::$scripts_version, true );
+			wp_register_script( 'customscrollbar', get_stylesheet_directory_uri() . '/js/jquery.mCustomScrollbar.concat.min.js', array( 'jquery' ), Project045_Definitions::$scripts_version, true );
+			wp_register_script( 'ddslick', get_stylesheet_directory_uri() . '/js/jquery.ddslick.min.js', array( 'jquery' ), Project045_Definitions::$scripts_version, true );
+			wp_register_script( 'project045-main', get_stylesheet_directory_uri() . '/js/main.min.js', array( 'jquery' ), Project045_Definitions::$scripts_version, true );
 
 			wp_enqueue_script( 'fontawesome-all' );
 			wp_enqueue_script( 'owl' );
@@ -392,7 +392,7 @@ if( !class_exists( 'Flaats_Configuration' ) ) {
 			wp_enqueue_script( 'markerclusterer' );
 			wp_enqueue_script( 'customscrollbar' );
 			wp_enqueue_script( 'ddslick' );
-			wp_enqueue_script( 'flaats-main' );
+			wp_enqueue_script( 'project045-main' );
 
 		}
 
@@ -401,7 +401,7 @@ if( !class_exists( 'Flaats_Configuration' ) ) {
 		/*-----------------------------------------------------------------------------------*/										
 		public static function register_maps_api() {
 
-			acf_update_setting( 'google_api_key', Flaats_Definitions::$maps_api_key );
+			acf_update_setting( 'google_api_key', Project045_Definitions::$maps_api_key );
 			
 		}
 
@@ -425,4 +425,4 @@ if( !class_exists( 'Flaats_Configuration' ) ) {
 
 }
 
-new Flaats_Configuration();
+new Project045_Configuration();

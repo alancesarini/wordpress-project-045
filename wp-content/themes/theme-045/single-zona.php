@@ -5,21 +5,21 @@ while( have_posts() ) {
     the_post();
     
     $lifestyle = array();
-    foreach( Flaats_Zona::$array_lifestyle[pll_current_language()] as $param => $text ) {
-        $score = get_post_meta( get_the_ID(), '_flaats_zone_lifestyle_' . $param, true );
+    foreach( Project045_Zona::$array_lifestyle[pll_current_language()] as $param => $text ) {
+        $score = get_post_meta( get_the_ID(), '_project045_zone_lifestyle_' . $param, true );
         $lifestyle[$text] = $score;
     }
-    $featured_promo = get_field( get_the_ID(), '_flaats_zone_promo' );
-    $promo_data = Flaats_Development::get_development_data( $featured_promo );
-    $query_developments = Flaats_Development::get_developments_by_zone( get_the_ID(), 0, 0 );
+    $featured_promo = get_field( get_the_ID(), '_project045_zone_promo' );
+    $promo_data = Project045_Development::get_development_data( $featured_promo );
+    $query_developments = Project045_Development::get_developments_by_zone( get_the_ID(), 0, 0 );
     $array_developments = array();
     while( $query_developments->have_posts() ) {
         $query_developments->the_post();
-        $data = Flaats_Development::get_development_data( get_the_ID() );
+        $data = Project045_Development::get_development_data( get_the_ID() );
         $array_developments[] = $data;
     }    
-    $array_zones = Flaats_Zona::get_all_zones( get_the_ID() );   
-    $coordinates = get_field( '_flaats_zone_location', get_the_ID() );
+    $array_zones = Project045_Zona::get_all_zones( get_the_ID() );   
+    $coordinates = get_field( '_project045_zone_location', get_the_ID() );
     if( $coordinates != false ) {
         $lat = $coordinates['lat'];
         $lng = $coordinates['lng'];       
@@ -36,7 +36,7 @@ while( have_posts() ) {
     </div>
 </section>
 
-<?php Flaats_Functions::render_search( 1 ); ?>
+<?php Project045_Functions::render_search( 1 ); ?>
 
 <section class="fichazona">
 	<div class="container">
@@ -57,7 +57,7 @@ while( have_posts() ) {
                 </div>
                 
                 <div class="goog_for">
-                	<h5><?php _e( 'Este area es buena para:', 'flaats' ); ?></h5>
+                	<h5><?php _e( 'Este area es buena para:', 'project045' ); ?></h5>
                     <ul class="clearfix">
                         <?php foreach( $lifestyle as $text => $value ) { ?>
                             <li>
@@ -71,7 +71,7 @@ while( have_posts() ) {
                             </li>
                         <?php } ?>              
                     </ul>
-                    <a href="#" class="lifestyle"><?php _e( 'BUSCAR LIFESTYLE', 'flaats' ); ?></a>
+                    <a href="#" class="lifestyle"><?php _e( 'BUSCAR LIFESTYLE', 'project045' ); ?></a>
                 </div>
                 
                 <?php if( intval( $featured_promo ) > 0 ) { ?>
@@ -83,7 +83,7 @@ while( have_posts() ) {
                             <h3><?php echo $promo_data['zone']; ?></h3>
                             <ul>
                                 <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon10.png" alt="icon"> <?php echo $promo_data['price_min']; ?></li>
-                                <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon11.png" alt="icon"> <?php echo $promo_data['rooms_min']; ?> <?php _e( 'habitaciones', 'flaats' ); ?></li>
+                                <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon11.png" alt="icon"> <?php echo $promo_data['rooms_min']; ?> <?php _e( 'habitaciones', 'project045' ); ?></li>
                             </ul>
                         </div>
                         <div class="heartsymbol">
@@ -104,7 +104,7 @@ while( have_posts() ) {
 <section class="merbella_slider">
 	<div class="container">
     	<div class="row">
-        	<h2><?php _e( 'Ver más promociones', 'flaats' ); ?> <br> <span><?php _e( 'en', 'flaats' ); ?> <?php the_title(); ?></span></h2>  
+        	<h2><?php _e( 'Ver más promociones', 'project045' ); ?> <br> <span><?php _e( 'en', 'project045' ); ?> <?php the_title(); ?></span></h2>  
             <div class="merbella_slider_area">
                 <div id="merbellaslider" class="owl-carousel">
                     
@@ -126,12 +126,12 @@ while( have_posts() ) {
                                 </div>
                                 <div class="caption">
                                     <h2><span class="notranslate"><?php echo $development['name']; ?></span></h3>
-                                    <h3><?php _e( 'Promoción en', 'flaats' ); ?> <?php the_title(); ?></h3>
+                                    <h3><?php _e( 'Promoción en', 'project045' ); ?> <?php the_title(); ?></h3>
                                     <p class="group inner list-group-item-text"><?php echo $development['excerpt']; ?></p>
                                 <ul>
-                                    <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon17.png" alt=""> <p><span><?php _e( 'desde', 'flaats' ); ?></span> <?php echo $development['price_min']; ?></p></li>
-                                    <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon18.png" alt=""><p><span><?php _e( 'desde', 'flaats' ); ?></span> <?php echo $development['rooms_min']; ?> <?php Flaats_Functions::render_rooms_literal( $development['rooms_min'] ); ?></p> </li>
-                                    <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon19.png" alt=""><p><span><?php _e( 'desde', 'flaats' ); ?></span> <?php echo $development['size_min']; ?> m2</p></li>
+                                    <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon17.png" alt=""> <p><span><?php _e( 'desde', 'project045' ); ?></span> <?php echo $development['price_min']; ?></p></li>
+                                    <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon18.png" alt=""><p><span><?php _e( 'desde', 'project045' ); ?></span> <?php echo $development['rooms_min']; ?> <?php Project045_Functions::render_rooms_literal( $development['rooms_min'] ); ?></p> </li>
+                                    <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon19.png" alt=""><p><span><?php _e( 'desde', 'project045' ); ?></span> <?php echo $development['size_min']; ?> m2</p></li>
                                 </ul>
                                 </div>
                             </div>
@@ -150,7 +150,7 @@ while( have_posts() ) {
 
 <section class="homearea">
 	<div class="container">
-    	<h4><?php _e( 'Otras zonas que', 'flaats' ); ?> <br> <span><?php _e( 'pueden interesarte', 'flaats' ); ?></span></h4>
+    	<h4><?php _e( 'Otras zonas que', 'project045' ); ?> <br> <span><?php _e( 'pueden interesarte', 'project045' ); ?></span></h4>
         
         <div id="homeareas" class="owl-carousel">
             
@@ -161,7 +161,7 @@ while( have_posts() ) {
                 <a href="<?php echo $zone['url']; ?>"><img src="<?php echo $zone['thumbnail_slider']; ?>" alt="<?php echo $zone['name']; ?>"></a>
                 <h3><?php echo $zone['name']; ?></h3>
                 </div>
-                <h2><a href="<?php echo pll_home_url(); ?><?php if( 'es' == pll_current_language() ) echo 'promociones'; else echo 'developments'; ?>?z=<?php echo $zone['id']; ?>"><?php _e( 'VER PROMOCIONES', 'flaats' ); ?></a></h2>                
+                <h2><a href="<?php echo pll_home_url(); ?><?php if( 'es' == pll_current_language() ) echo 'promociones'; else echo 'developments'; ?>?z=<?php echo $zone['id']; ?>"><?php _e( 'VER PROMOCIONES', 'project045' ); ?></a></h2>                
             </div>
             </div>
         <?php } ?>
@@ -174,7 +174,7 @@ while( have_posts() ) {
 
 
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?language=es&key=<?php echo Flaats_Definitions::$maps_api_key; ?>&callback=initialise"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?language=es&key=<?php echo Project045_Definitions::$maps_api_key; ?>&callback=initialise"></script>
 
 <script>
     var template_url = '<?php echo get_stylesheet_directory_uri(); ?>';

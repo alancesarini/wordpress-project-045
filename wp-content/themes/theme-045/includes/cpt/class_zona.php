@@ -1,8 +1,8 @@
 <?php
 
-if( !class_exists( 'Flaats_Zona' ) ) {
+if( !class_exists( 'Project045_Zona' ) ) {
 	
-	class Flaats_Zona {
+	class Project045_Zona {
 
 		private static $_version;
 
@@ -17,17 +17,17 @@ if( !class_exists( 'Flaats_Zona' ) ) {
 
 			self::$_version = '1.0.0';
 
-			self::$prefix = '_flaats_zona_';
+			self::$prefix = '_project045_zona_';
  
 			self::$array_lifestyle['es'] = array(
-				'nightlife' => __( 'VIDA NOCTURNA', 'flaats' ),
-				'beach' => __( 'PLAYA / BAÑO', 'flaats' ),
-				'shops' => __( 'TIENDAS', 'flaats' ),
-				'eating' => __( 'RESTAURANTES', 'flaats' ),
-				'golf' => __( 'GOLF', 'flaats' ),
-				'port' => __( 'PUERTO DEPORTIVO', 'flaats' ),
-				'culture' => __( 'CULTURA', 'flaats' ),
-				'family' => __( 'FAMILIA', 'flaats' ),
+				'nightlife' => __( 'VIDA NOCTURNA', 'project045' ),
+				'beach' => __( 'PLAYA / BAÑO', 'project045' ),
+				'shops' => __( 'TIENDAS', 'project045' ),
+				'eating' => __( 'RESTAURANTES', 'project045' ),
+				'golf' => __( 'GOLF', 'project045' ),
+				'port' => __( 'PUERTO DEPORTIVO', 'project045' ),
+				'culture' => __( 'CULTURA', 'project045' ),
+				'family' => __( 'FAMILIA', 'project045' ),
 			);
  
 			self::$array_lifestyle['en'] = array(
@@ -113,7 +113,7 @@ if( !class_exists( 'Flaats_Zona' ) ) {
 			foreach( self::$array_lifestyle[pll_current_language()] as $param => $text ) {
 				if( isset( $_GET[$param] ) && intval( $_GET[$param] ) > 0 && intval( $_GET[$param] ) < 6 ) {
 					$args['meta_query'][] = array(
-						'key' => '_flaats_zone_lifestyle_' . $param,
+						'key' => '_project045_zone_lifestyle_' . $param,
 						'value' => intval( $_GET[$param] ),
 						'compare' => '>='
 					);
@@ -168,8 +168,8 @@ if( !class_exists( 'Flaats_Zona' ) ) {
 			$lifestyle2 = array();
 			$i = 1;
 			foreach( self::$array_lifestyle[pll_current_language()] as $param => $text ) {
-				$text = __( $text, 'flaats' );
-				$score = get_post_meta( $zone_id, '_flaats_zone_lifestyle_' . $param, true );
+				$text = __( $text, 'project045' );
+				$score = get_post_meta( $zone_id, '_project045_zone_lifestyle_' . $param, true );
 				$text_formatted = ucfirst( strtolower( $text ) );
 				$text_formatted = str_replace( 'Ñ', 'ñ', $text_formatted );
 				$lifestyle[$text_formatted] = $score;
@@ -180,9 +180,9 @@ if( !class_exists( 'Flaats_Zona' ) ) {
 				}
 				$i++;
 			}
-			$content = Flaats_Functions::get_the_content_by_id( $zone_id );
-			$gallery = get_field( '_flaats_zone_pics', $zone_id );
-			$coordinates = get_field( '_flaats_zone_location', $zone_id );
+			$content = Project045_Functions::get_the_content_by_id( $zone_id );
+			$gallery = get_field( '_project045_zone_pics', $zone_id );
+			$coordinates = get_field( '_project045_zone_location', $zone_id );
 			$lat = $coordinates['lat'];
 			$lng = $coordinates['lng'];   
 
@@ -209,4 +209,4 @@ if( !class_exists( 'Flaats_Zona' ) ) {
 	}
 }
 
-new Flaats_Zona();
+new Project045_Zona();

@@ -26,7 +26,7 @@ wp_reset_postdata();
 
 <section class="homearea">
 	<div class="container">
-    	<h2><span class="notranslate">dream<strong>homes</strong></span> <em><?php _e( 'areas', 'flaats' ); ?></em></h2>
+    	<h2><span class="notranslate">dream<strong>homes</strong></span> <em><?php _e( 'areas', 'project045' ); ?></em></h2>
         
         <div id="homeareas" class="owl-carousel">
             <?php foreach( $zones as $zone ) { ?>
@@ -36,7 +36,7 @@ wp_reset_postdata();
                     <a href="<?php echo $zone['permalink']; ?>"><img src="<?php echo $zone['thumbnail']; ?>" alt="<?php echo $zone['title']; ?>"></a>
                     <h3><?php echo $zone['title']; ?></h3>
                     </div>
-                    <h4><a href="<?php echo pll_home_url(); ?><?php if( 'es' == pll_current_language() ) echo 'promociones'; else echo 'developments'; ?>?z=<?php echo $zone['id']; ?>"><?php _e( 'VER PROMOCIONES', 'flaats' ); ?></a></h4>
+                    <h4><a href="<?php echo pll_home_url(); ?><?php if( 'es' == pll_current_language() ) echo 'promociones'; else echo 'developments'; ?>?z=<?php echo $zone['id']; ?>"><?php _e( 'VER PROMOCIONES', 'project045' ); ?></a></h4>
                 </div>
                 </div>
             <?php } ?>

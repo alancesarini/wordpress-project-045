@@ -6,7 +6,7 @@
 
 get_header(); 
 
-$array_developments = Flaats_Development::get_search_results();
+$array_developments = Project045_Development::get_search_results();
 
 $mobile_detect = new Mobile_Detect();
 
@@ -27,7 +27,7 @@ $mobile_detect = new Mobile_Detect();
 </section>
 
 
-<?php Flaats_Functions::render_search( 1 ); ?>
+<?php Project045_Functions::render_search( 1 ); ?>
 
 
 <section class="busqueda_mapa clearfix">
@@ -38,7 +38,7 @@ $mobile_detect = new Mobile_Detect();
     
     <div id="map" style="width:50%;height:850px;float:right"></div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&language=es&key=<?php echo Flaats_Definitions::$maps_api_key; ?>"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&language=es&key=<?php echo Project045_Definitions::$maps_api_key; ?>"></script>
 
     <script>
       var array_locations = new Array();
@@ -51,7 +51,7 @@ $mobile_detect = new Mobile_Detect();
 
       <?php 
         if( isset( $_GET['zone'] ) && intval( $_GET['zone'] ) > 0 ) {
-          $zone_data = Flaats_Zona::get_zone_data( intval( $_GET['zone'] ) ); 
+          $zone_data = Project045_Zona::get_zone_data( intval( $_GET['zone'] ) ); 
           $lat = $zone_data['lat'];
           $lng = $zone_data['lng'];
         } else {
@@ -90,7 +90,7 @@ $mobile_detect = new Mobile_Detect();
           marker.htmlString += '    <p><a href="' +  array_locations[i].url +  '" title=""><img src="' + array_locations[i].image + '" /></a></p>';
           marker.htmlString += '    <h4>' + array_locations[i].name + '</h4>';
           marker.htmlString += '		<p class="text_assoc">' + array_locations[i].address + '</p>';
-          marker.htmlString += '		<p><a href="' +  array_locations[i].url +  '" title=""><?php _e( 'Ver promoción', 'flaats' ); ?></a></p>';
+          marker.htmlString += '		<p><a href="' +  array_locations[i].url +  '" title=""><?php _e( 'Ver promoción', 'project045' ); ?></a></p>';
           marker.htmlString += '</div>';          
           array_markers.push(marker); 
 
@@ -99,7 +99,7 @@ $mobile_detect = new Mobile_Detect();
           window_html += '    <p><a href="' +  array_locations[i].url +  '" title=""><img src="' + array_locations[i].image + '" /></a></p>';
           window_html += '    <h4>' + array_locations[i].name + '</h4>';
           window_html += '		<p class="text_assoc">' + array_locations[i].address + '</p>';
-          window_html += '		<p><a href="' +  array_locations[i].url +  ' " title=""><?php _e( 'Ver promoción', 'flaats' ); ?></a></p>';
+          window_html += '		<p><a href="' +  array_locations[i].url +  ' " title=""><?php _e( 'Ver promoción', 'project045' ); ?></a></p>';
           window_html += '</div>';   
 
           infowindow = new google.maps.InfoWindow({
@@ -170,7 +170,7 @@ $mobile_detect = new Mobile_Detect();
                 <p class="group inner list-group-item-text"><?php echo $development['excerpt_short']; ?></p>
                <ul>
                   <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon17.png" alt="icon"> <p><?php echo $development['price_min']; ?></p></li>
-                  <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon18.png" alt="icon"><p> <?php echo $development['rooms_min']; ?> <?php Flaats_Functions::render_rooms_literal( $development['rooms_min'] ); ?></p> </li>
+                  <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon18.png" alt="icon"><p> <?php echo $development['rooms_min']; ?> <?php Project045_Functions::render_rooms_literal( $development['rooms_min'] ); ?></p> </li>
                   <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon19.png" alt="icon"><p><?php echo $development['size_min']; ?> m2</p></li>
                </ul>
             </div>
@@ -186,6 +186,6 @@ $mobile_detect = new Mobile_Detect();
 
 </section>
 
-<?php Flaats_Functions::show_search_mobile(); ?>
+<?php Project045_Functions::show_search_mobile(); ?>
 
 <?php get_footer(); ?>

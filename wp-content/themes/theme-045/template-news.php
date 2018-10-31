@@ -10,7 +10,7 @@ get_header();
 
 <section class="pagebanner" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/banner-news.jpg)">
 	<div class="container">
-    	<h1><?php _e( 'Noticias', 'flaats' ); ?></h1>
+    	<h1><?php _e( 'Noticias', 'project045' ); ?></h1>
     </div>
 </section>
 
@@ -38,7 +38,7 @@ get_header();
             <div class="caption">
                 <span><?php the_time( 'j M Y' ); ?></span>
                 <h2><?php the_title(); ?></h2>
-                <p><?php echo Flaats_Functions::get_excerpt( get_the_ID() ); ?></p>
+                <p><?php echo Project045_Functions::get_excerpt( get_the_ID() ); ?></p>
                <ul>
                   <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon-comments.png" alt="icon"> <?php echo get_comments_number( get_the_ID() ); ?></li>
                </ul>

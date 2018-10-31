@@ -8,7 +8,7 @@ while( have_posts() ) {
 
 <section class="pagebanner" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/purchasebanner.jpg)">
 	<div class="container">
-    	<h1><?php _e( 'Error 404', 'flaats' ); ?></h1>
+    	<h1><?php _e( 'Error 404', 'project045' ); ?></h1>
     </div>
 </section>
 
@@ -17,7 +17,7 @@ while( have_posts() ) {
        <div class="row">
          <div class="titulo_area clearfix">
          	<div class="col-md-12">
-            	<?php _e( 'Lo sentimos, no hemos encontrado lo que buscaba.', 'flaats' ); ?>
+            	<?php _e( 'Lo sentimos, no hemos encontrado lo que buscaba.', 'project045' ); ?>
             </div>
          </div>
        </div>      

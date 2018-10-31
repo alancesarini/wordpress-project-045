@@ -1,10 +1,10 @@
 <?php
 
-$benefits_intro = get_field( '_flaats_benefits_intro' );
+$benefits_intro = get_field( '_project045_benefits_intro' );
 
 $benefits = array();
 for( $i = 1; $i < 5; $i++ ) {
-    while( have_rows( '_flaats_benefits_section' . $i ) ) {
+    while( have_rows( '_project045_benefits_section' . $i ) ) {
         the_row();
         $title = get_sub_field( 'title' );
         $text = get_sub_field( 'text' );
@@ -21,7 +21,7 @@ for( $i = 1; $i < 5; $i++ ) {
 	<div class="container">
     	<div class="row">
         	<div class="col-md-12">
-            	<h3><?php _e( 'Beneficios de comprar con', 'flaats' ); ?></h3>
+            	<h3><?php _e( 'Beneficios de comprar con', 'project045' ); ?></h3>
                 <h2><span class="notranslate">dream<em>homes</em></span> </h2>
                 <h4><?php echo $benefits_intro; ?></h4>
             </div>

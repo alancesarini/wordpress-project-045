@@ -8,7 +8,7 @@ while( have_posts() ) {
 
 <section class="pagebanner" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/banner-news.jpg)">
 	<div class="container">
-    	<h1><?php _e( 'Noticias', 'flaats' ); ?></h1>
+    	<h1><?php _e( 'Noticias', 'project045' ); ?></h1>
     </div>
 </section>
 
@@ -30,10 +30,10 @@ while( have_posts() ) {
                     <?php the_post_thumbnail(); ?>
                 </div>
                 <div class="post-content">
-                    <?php echo Flaats_Functions::multi_col_text( get_the_content() ); ?>
+                    <?php echo Project045_Functions::multi_col_text( get_the_content() ); ?>
                 </div>
                 <div class="post-comments">
-                    <h2><?php echo get_comments_number( get_the_ID() ); ?> <strong><?php _e( 'comentarios', 'flaats' ); ?></strong></h2>
+                    <h2><?php echo get_comments_number( get_the_ID() ); ?> <strong><?php _e( 'comentarios', 'project045' ); ?></strong></h2>
                     <?php comments_template(); ?>
                 </div>
                 <div class="post-new-comment">
@@ -43,17 +43,17 @@ while( have_posts() ) {
 
                         'author' =>
                         '<p class="form-row form-row-name">' .
-                        '<input id="author" name="author" type="text" placeholder="' . __( 'Nombre', 'flaats' ) . '" value="' . esc_attr( $commenter['comment_author'] ) .
+                        '<input id="author" name="author" type="text" placeholder="' . __( 'Nombre', 'project045' ) . '" value="' . esc_attr( $commenter['comment_author'] ) .
                         '" size="30" /></p>',
                     
                         'email' =>
                         '<p class="form-row form-row-email">' .
-                        '<input id="email-comment" name="email" type="text" placeholder="' . __( 'Email', 'flaats' ) . '" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+                        '<input id="email-comment" name="email" type="text" placeholder="' . __( 'Email', 'project045' ) . '" value="' . esc_attr(  $commenter['comment_author_email'] ) .
                         '" size="30" /></p>',
                     
                         'url' =>
                         '<p class="form-row form-row-web">' .
-                        '<input id="url" name="url" type="text" placeholder="' . __( 'Web', 'flaats' ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) .
+                        '<input id="url" name="url" type="text" placeholder="' . __( 'Web', 'project045' ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) .
                         '" size="30" /></p>',
                     );                
                         comment_form( array(
@@ -64,19 +64,19 @@ while( have_posts() ) {
                                 </p>',
                             'class_submit' => 'btn-blue',
                             'title_reply' => '',
-                            'label_submit' => __( 'Enviar', 'flaats' ),
+                            'label_submit' => __( 'Enviar', 'project045' ),
                             'comment_notes_before' => '',
                             'comment_notes_after' => '',
-                            'title_reply_before' => '<h3>' . __( 'Responder', 'flaats' ) . '</h3>',
-                            'cancel_reply_link' => __( 'Cancelar respuesta', 'flaats' ),
-                            'title_reply_to' => __( 'Responder a %s', 'flaats' ),
+                            'title_reply_before' => '<h3>' . __( 'Responder', 'project045' ) . '</h3>',
+                            'cancel_reply_link' => __( 'Cancelar respuesta', 'project045' ),
+                            'title_reply_to' => __( 'Responder a %s', 'project045' ),
                             'fields' => apply_filters( 'comment_form_default_fields', $fields )
                         ) );
                         ?>    
 
                         <div class="form-row-legal">
                              <input type="checkbox" id="chk-legal-comment" name="chk-legal-comment" />
-                          	 <label for="chk-legal-comment"><?php _e( 'He leído y acepto el', 'flaats' ); ?><a href="/aviso-legal/"> <?php _e( 'Aviso Legal y la Ley de Protección de Datos', 'flaats' ); ?></a></label>
+                          	 <label for="chk-legal-comment"><?php _e( 'He leído y acepto el', 'project045' ); ?><a href="/aviso-legal/"> <?php _e( 'Aviso Legal y la Ley de Protección de Datos', 'project045' ); ?></a></label>
                         </div>                        
                 </div>
             </div>

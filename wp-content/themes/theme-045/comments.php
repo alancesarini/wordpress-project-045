@@ -36,7 +36,7 @@ function custom_comment($comment, $args, $depth) {
 	<?php
 		wp_list_comments( array(
 			'avatar_size' => 80,
-			'reply_text' => __( 'Responder', 'flaats' ),
+			'reply_text' => __( 'Responder', 'project045' ),
 			'callback' => 'custom_comment'
 		) );
 	?>

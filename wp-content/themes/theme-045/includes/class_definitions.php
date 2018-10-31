@@ -1,8 +1,8 @@
 <?php
 
-if( !class_exists( 'Flaats_Definitions' ) ) {
+if( !class_exists( 'Project045_Definitions' ) ) {
 
-	class Flaats_Definitions {
+	class Project045_Definitions {
 
 		private static $_this;
 
@@ -24,7 +24,7 @@ if( !class_exists( 'Flaats_Definitions' ) ) {
 
 			self::$witei_inbox = 'ehv@inbox.witei.com';
 
-			self::$email_from = 'info@dreamhomes.es';
+			self::$email_from = 'info@project045.es';
 
 			self::$scripts_version = '1.0.40';
 
@@ -40,4 +40,4 @@ if( !class_exists( 'Flaats_Definitions' ) ) {
 
 }
 
-new Flaats_Definitions();
+new Project045_Definitions();

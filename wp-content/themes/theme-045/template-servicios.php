@@ -12,7 +12,7 @@ while( have_posts() ) {
 
 $array_data = array();
 for( $i = 1; $i < 7; $i++ ) {
-    while( have_rows( '_flaats_services_section' . $i ) ) {
+    while( have_rows( '_project045_services_section' . $i ) ) {
         the_row();
         $title = get_sub_field( 'title' );
         $text = get_sub_field( 'text' );
@@ -24,11 +24,11 @@ for( $i = 1; $i < 7; $i++ ) {
     }
 }
 
-$benefits_intro = get_field( '_flaats_benefits_intro' );
+$benefits_intro = get_field( '_project045_benefits_intro' );
 
 $benefits = array();
 for( $i = 1; $i < 5; $i++ ) {
-    while( have_rows( '_flaats_benefits_section' . $i ) ) {
+    while( have_rows( '_project045_benefits_section' . $i ) ) {
         the_row();
         $title = get_sub_field( 'title' );
         $text = get_sub_field( 'text' );

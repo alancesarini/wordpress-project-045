@@ -9,12 +9,12 @@ get_header();
 $zone_id = intval( $_GET['z'] );
 $order = intval( $_GET['o'] );
  
-$query = Flaats_Development::get_developments_by_zone( $zone_id, 0, $order );
+$query = Project045_Development::get_developments_by_zone( $zone_id, 0, $order );
 
 $array_developments = array();
 while( $query->have_posts() ) {
     $query->the_post();
-    $data = Flaats_Development::get_development_data( get_the_ID() );
+    $data = Project045_Development::get_development_data( get_the_ID() );
     $array_developments[] = $data;
 }
 
@@ -26,7 +26,7 @@ while( $query->have_posts() ) {
     </div>
 </section>
 
-<?php Flaats_Functions::render_search( 1 ); ?>
+<?php Project045_Functions::render_search( 1 ); ?>
 
 <section class="fichazona">
 	<div class="container">
@@ -47,10 +47,10 @@ while( $query->have_posts() ) {
             <div class="listmenu">
             	<div class="shortlist">
                     <select id="gridviewlist">
-                      <option value="-1"><?php _e( 'Ordenar por', 'flaats' ); ?></option>
-                      <option value="1" <?php if( 1 == $order ) { echo 'selected'; } ?>><?php _e( 'Precio', 'flaats' ); ?></option>
-                      <option value="2" <?php if( 2 == $order ) { echo 'selected'; } ?>><?php _e( 'Tamaño', 'flaats' ); ?></option>
-                      <option value="3" <?php if( 3 == $order ) { echo 'selected'; } ?>><?php _e( 'Habitaciones', 'flaats' ); ?></option>                                
+                      <option value="-1"><?php _e( 'Ordenar por', 'project045' ); ?></option>
+                      <option value="1" <?php if( 1 == $order ) { echo 'selected'; } ?>><?php _e( 'Precio', 'project045' ); ?></option>
+                      <option value="2" <?php if( 2 == $order ) { echo 'selected'; } ?>><?php _e( 'Tamaño', 'project045' ); ?></option>
+                      <option value="3" <?php if( 3 == $order ) { echo 'selected'; } ?>><?php _e( 'Habitaciones', 'project045' ); ?></option>                                
         	        </select>
                 </div>
             	<div class="buttngroup">
@@ -78,9 +78,9 @@ while( $query->have_posts() ) {
                     <h2><?php echo $development['zone']; ?></h2>
                     <p class="group inner list-group-item-text"><?php echo $development['excerpt']; ?></p>
                    <ul>
-                      <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon17.png" alt="icon"> <p><span><?php _e( 'desde', 'flaats' ); ?></span> <?php echo $development['price_min']; ?></p></li>
-                      <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon18.png" alt="icon"><p><span><?php _e( 'desde', 'flaats' ); ?></span> <?php echo $development['rooms_min']; ?> <?php Flaats_Functions::render_rooms_literal( $development['rooms_min'] ); ?></p> </li>
-                      <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon19.png" alt="icon"><p><span><?php _e( 'desde', 'flaats' ); ?></span> <?php echo $development['size_min']; ?> m2</p></li>
+                      <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon17.png" alt="icon"> <p><span><?php _e( 'desde', 'project045' ); ?></span> <?php echo $development['price_min']; ?></p></li>
+                      <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon18.png" alt="icon"><p><span><?php _e( 'desde', 'project045' ); ?></span> <?php echo $development['rooms_min']; ?> <?php Project045_Functions::render_rooms_literal( $development['rooms_min'] ); ?></p> </li>
+                      <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon19.png" alt="icon"><p><span><?php _e( 'desde', 'project045' ); ?></span> <?php echo $development['size_min']; ?> m2</p></li>
                    </ul>
                 </div>
           </div>
@@ -101,6 +101,6 @@ while( $query->have_posts() ) {
 
 <?php get_template_part( 'partials/subscription' ); ?>
 
-<?php Flaats_Functions::show_search_mobile(); ?>
+<?php Project045_Functions::show_search_mobile(); ?>
 
 <?php get_footer(); ?>

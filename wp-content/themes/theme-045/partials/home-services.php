@@ -1,7 +1,7 @@
 <?php
 
     $services = array();
-    while( have_rows( '_flaats_home_services' ) ) {
+    while( have_rows( '_project045_home_services' ) ) {
         the_row();
         $title = get_sub_field( 'title' );
         $text = get_sub_field( 'text' );
@@ -12,7 +12,7 @@
 
 <section class="section_services">
 	<div class="container">
-        <h2><span class="notranslate">dream<strong>homes</strong></span> <em><?php _e( 'servicios', 'flaats' ); ?></em></h2>
+        <h2><span class="notranslate">dream<strong>homes</strong></span> <em><?php _e( 'servicios', 'project045' ); ?></em></h2>
     	<div class="row">
 
             <?php foreach( $services as $service ) { ?>

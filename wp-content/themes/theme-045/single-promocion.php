@@ -5,20 +5,20 @@
 while( have_posts() ) {
     the_post(); 
     $promo_name = get_the_title();
-    $promo_data = Flaats_Development::get_development_data( get_the_ID() );
-    $promo_logo = get_field( '_flaats_promo_logo', get_the_ID() );
-    $promo_pics = get_field( '_flaats_promo_pics', get_the_ID() );
-    $promo_developers = get_field( '_flaats_promo_developers', get_the_ID() );
-    $promo_plan = get_field( '_flaats_promo_plan', get_the_ID() );
-    $promo_zone = get_field( '_flaats_promo_zone', get_the_ID() );
-    $promo_price_min = Flaats_Functions::format_price( get_field( '_flaats_promo_data_price_min', get_the_ID() ) );
-    $promo_size_min = get_field( '_flaats_promo_data_size_min', get_the_ID() );
-    $promo_rooms_min = get_field( '_flaats_promo_data_rooms_min', get_the_ID() );
-    $promo_rooms_max = get_field( '_flaats_promo_data_rooms_max', get_the_ID() );
-    $promo_video = get_field( '_flaats_promo_data_video', get_the_ID() );    
-    $promo_building_permit = get_field( '_flaats_promo_data_building_permit', get_the_ID() );    
-    $promo_construction_started = get_field( '_flaats_promo_data_construction_started', get_the_ID() );  
-    $promo_date = get_field( '_flaats_promo_data_dateend', get_the_ID() );
+    $promo_data = Project045_Development::get_development_data( get_the_ID() );
+    $promo_logo = get_field( '_project045_promo_logo', get_the_ID() );
+    $promo_pics = get_field( '_project045_promo_pics', get_the_ID() );
+    $promo_developers = get_field( '_project045_promo_developers', get_the_ID() );
+    $promo_plan = get_field( '_project045_promo_plan', get_the_ID() );
+    $promo_zone = get_field( '_project045_promo_zone', get_the_ID() );
+    $promo_price_min = Project045_Functions::format_price( get_field( '_project045_promo_data_price_min', get_the_ID() ) );
+    $promo_size_min = get_field( '_project045_promo_data_size_min', get_the_ID() );
+    $promo_rooms_min = get_field( '_project045_promo_data_rooms_min', get_the_ID() );
+    $promo_rooms_max = get_field( '_project045_promo_data_rooms_max', get_the_ID() );
+    $promo_video = get_field( '_project045_promo_data_video', get_the_ID() );    
+    $promo_building_permit = get_field( '_project045_promo_data_building_permit', get_the_ID() );    
+    $promo_construction_started = get_field( '_project045_promo_data_construction_started', get_the_ID() );  
+    $promo_date = get_field( '_project045_promo_data_dateend', get_the_ID() );
     if( $promo_date ) {
         $_date = new DateTime( substr( $promo_date, 6, 4 ) . '-' . substr( $promo_date, 3, 2 ) . '-' . substr( $promo_date, 0, 2 ) );
         $finish_day = $_date->format( 'j' );
@@ -26,10 +26,10 @@ while( have_posts() ) {
         $finish_year = $_date->format( 'Y' );
     }
     $property_type = get_the_terms( get_the_ID(), 'property_type' );
-    $zone_data = Flaats_Zona::get_zone_data( $promo_zone );
+    $zone_data = Project045_Zona::get_zone_data( $promo_zone );
     $promo_texts = array();
     for( $i = 1; $i < 4; $i++ ) {
-        while( have_rows( '_flaats_promo_text' . $i ) ) {
+        while( have_rows( '_project045_promo_text' . $i ) ) {
             the_row();
             $title = get_sub_field( 'title' );
             $subtitle = get_sub_field( 'subtitle' );
@@ -40,7 +40,7 @@ while( have_posts() ) {
         }
     }
     
-    $amenities = Flaats_Development::get_the_terms_sorted( get_the_ID(), 'amenity' );
+    $amenities = Project045_Development::get_the_terms_sorted( get_the_ID(), 'amenity' );
     $promo_amenities = array();
     foreach( $amenities as $amenity ) {
         $image_id = get_term_meta( $amenity->term_id, 'image', true );
@@ -48,16 +48,16 @@ while( have_posts() ) {
         $promo_amenities[] = array( 'name' => $amenity->name, 'pic' => $image_url );
     }
 
-    $query_developments = Flaats_Development::get_developments_by_zone( $promo_zone, get_the_ID(), 0 );
+    $query_developments = Project045_Development::get_developments_by_zone( $promo_zone, get_the_ID(), 0 );
     $more_promos = array();
     while( $query_developments->have_posts() ) {
         $query_developments->the_post();
-        $data = Flaats_Development::get_development_data( get_the_ID() );
+        $data = Project045_Development::get_development_data( get_the_ID() );
         $more_promos[] = $data;
     }    
     wp_reset_postdata();    
 
-    while( have_rows( '_flaats_promo_pdf', get_the_ID() ) ) {
+    while( have_rows( '_project045_promo_pdf', get_the_ID() ) ) {
         the_row();
         $dossier_url = get_sub_field( 'dossier' );
         $plans_url = get_sub_field( 'plans' );
@@ -65,7 +65,7 @@ while( have_posts() ) {
     }
 
     $content = get_the_content('',FALSE,'');
-    $content = Flaats_Functions::multi_col_text( $content );
+    $content = Project045_Functions::multi_col_text( $content );
 
 
     //------------------------------------------------------------------------------------    
@@ -73,19 +73,19 @@ while( have_posts() ) {
     //------------------------------------------------------------------------------------    
     if( 'es' == pll_current_language() ) {
         $english_promo_id = pll_get_post( get_the_ID(), 'en' );
-        $promo_data = Flaats_Development::get_development_data( $english_promo_id );
-        $promo_logo = get_field( '_flaats_promo_logo', $english_promo_id );
-        $promo_pics = get_field( '_flaats_promo_pics', $english_promo_id );
-        $promo_developers = get_field( '_flaats_promo_developers', $english_promo_id );
-        $promo_plan = get_field( '_flaats_promo_plan', $english_promo_id );
-        $promo_price_min = Flaats_Functions::format_price( get_field( '_flaats_promo_data_price_min', $english_promo_id ) );
-        $promo_size_min = get_field( '_flaats_promo_data_size_min', $english_promo_id );
-        $promo_rooms_min = get_field( '_flaats_promo_data_rooms_min', $english_promo_id );
-        $promo_rooms_max = get_field( '_flaats_promo_data_rooms_max', $english_promo_id );
-        $promo_video = get_field( '_flaats_promo_data_video', $english_promo_id );    
-        $promo_building_permit = get_field( '_flaats_promo_data_building_permit', $english_promo_id );   
-        $promo_construction_started = get_field( '_flaats_promo_data_construction_started', $english_promo_id );  
-        $promo_date = get_field( '_flaats_promo_data_dateend', $english_promo_id );
+        $promo_data = Project045_Development::get_development_data( $english_promo_id );
+        $promo_logo = get_field( '_project045_promo_logo', $english_promo_id );
+        $promo_pics = get_field( '_project045_promo_pics', $english_promo_id );
+        $promo_developers = get_field( '_project045_promo_developers', $english_promo_id );
+        $promo_plan = get_field( '_project045_promo_plan', $english_promo_id );
+        $promo_price_min = Project045_Functions::format_price( get_field( '_project045_promo_data_price_min', $english_promo_id ) );
+        $promo_size_min = get_field( '_project045_promo_data_size_min', $english_promo_id );
+        $promo_rooms_min = get_field( '_project045_promo_data_rooms_min', $english_promo_id );
+        $promo_rooms_max = get_field( '_project045_promo_data_rooms_max', $english_promo_id );
+        $promo_video = get_field( '_project045_promo_data_video', $english_promo_id );    
+        $promo_building_permit = get_field( '_project045_promo_data_building_permit', $english_promo_id );   
+        $promo_construction_started = get_field( '_project045_promo_data_construction_started', $english_promo_id );  
+        $promo_date = get_field( '_project045_promo_data_dateend', $english_promo_id );
         if( $promo_date ) {
             $_date = new DateTime( substr( $promo_date, 6, 4 ) . '-' . substr( $promo_date, 3, 2 ) . '-' . substr( $promo_date, 0, 2 ) );
             $finish_day = $_date->format( 'j' );
@@ -93,7 +93,7 @@ while( have_posts() ) {
             $finish_year = $_date->format( 'Y' );
         }
     
-        while( have_rows( '_flaats_promo_pdf', $english_promo_id ) ) {
+        while( have_rows( '_project045_promo_pdf', $english_promo_id ) ) {
             the_row();
             $dossier_url = get_sub_field( 'dossier' );
             $plans_url = get_sub_field( 'plans' );
@@ -102,14 +102,14 @@ while( have_posts() ) {
         
         $promo_texts = array();     
         for( $i = 1; $i < 4; $i++ ) {
-            while( have_rows( '_flaats_promo_text' . $i, get_the_ID() ) ) {
+            while( have_rows( '_project045_promo_text' . $i, get_the_ID() ) ) {
                 the_row();
                 $title = get_sub_field( 'title' );
                 $subtitle = get_sub_field( 'subtitle' );
                 $text = get_sub_field( 'text' );
                 $promo_texts[] = array( 'title' => $title, 'subtitle' => $subtitle, 'text' => $text, 'pic' => '', 'video' => '' );
             }            
-            while( have_rows( '_flaats_promo_text' . $i, $english_promo_id ) ) {
+            while( have_rows( '_project045_promo_text' . $i, $english_promo_id ) ) {
                 the_row();
                 $pic = get_sub_field( 'pic' );                
                 $video = get_sub_field( 'video' );                
@@ -118,14 +118,14 @@ while( have_posts() ) {
             }
         }
 
-        $query_developments = Flaats_Development::get_developments_by_zone( $promo_zone, get_the_ID(), 0 );
+        $query_developments = Project045_Development::get_developments_by_zone( $promo_zone, get_the_ID(), 0 );
         $more_promos = array();
         while( $query_developments->have_posts() ) {
             $query_developments->the_post();
             $spanish_subpromo_id = pll_get_post( get_the_ID(), 'es' );         
             if( intval( $spanish_subpromo_id ) > 0 ) {   
-                $data = Flaats_Development::get_development_data( get_the_ID() );
-                $excerpt = Flaats_Functions::get_excerpt( $spanish_subpromo_id );	
+                $data = Project045_Development::get_development_data( get_the_ID() );
+                $excerpt = Project045_Functions::get_excerpt( $spanish_subpromo_id );	
                 $data['excerpt'] = $excerpt;
                 $more_promos[] = $data;
             }
@@ -146,7 +146,7 @@ while( have_posts() ) {
     </div>
 </section>
 
-<?php Flaats_Functions::render_search( 1 ); ?>
+<?php Project045_Functions::render_search( 1 ); ?>
 
 
 <section class="promocion_slider">
@@ -183,7 +183,7 @@ while( have_posts() ) {
                     <?php $i = 1; ?>
                     <?php if( $promo_video != '' ) { ?>
                         <div class="item active" >
-                            <?php the_field( '_flaats_promo_data_video', $english_promo_id ); ?>
+                            <?php the_field( '_project045_promo_data_video', $english_promo_id ); ?>
                         </div>
                     <?php $i++; } ?>    
 
@@ -209,8 +209,8 @@ while( have_posts() ) {
                 <div class="row_top clearfix">
                 	<ul class="list_ricon">
                       <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/ico_<?php echo $property_type[0]->slug; ?>.png" alt="icon"><p><?php echo $property_type[0]->name; ?></p></li>
-                      <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon18.png" alt="icon"><p><span><?php _e( 'desde', 'flaats' ); ?></span> <?php echo $promo_rooms_min; ?> <?php Flaats_Functions::render_rooms_literal( $promo_rooms_min ); ?></p> </li>
-                      <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon19.png" alt="icon"><p><span><?php _e( 'desde', 'flaats' ); ?></span> <?php echo $promo_size_min; ?> m2</p></li>
+                      <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon18.png" alt="icon"><p><span><?php _e( 'desde', 'project045' ); ?></span> <?php echo $promo_rooms_min; ?> <?php Project045_Functions::render_rooms_literal( $promo_rooms_min ); ?></p> </li>
+                      <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon19.png" alt="icon"><p><span><?php _e( 'desde', 'project045' ); ?></span> <?php echo $promo_size_min; ?> m2</p></li>
                    </ul>
                  </div>
                  <div class="ricon_bt clearfix">
@@ -219,20 +219,20 @@ while( have_posts() ) {
                 </div>
                 <div class="col-md-3">
                 	<div class="ricon_right">
-                	<h3><?php _e( 'desde', 'flaats' ); ?> <strong><?php echo $promo_price_min; ?></strong></h3>
+                	<h3><?php _e( 'desde', 'project045' ); ?> <strong><?php echo $promo_price_min; ?></strong></h3>
 
                     <?php if( intval( $promo_building_permit ) > 0 ) { ?>
                         <a href="#" class="riconinfo">
                             <?php 
                                 switch( $promo_building_permit ) {
                                     case 1:
-                                        _e( 'licencia solicitada', 'flaats' ); 
+                                        _e( 'licencia solicitada', 'project045' ); 
                                         break;
                                     case 2:
-                                        _e( 'licencia concedida', 'flaats' ); 
+                                        _e( 'licencia concedida', 'project045' ); 
                                         break;
                                     case 3:
-                                        _e( 'licencia de primera ocupación', 'flaats' ); 
+                                        _e( 'licencia de primera ocupación', 'project045' ); 
                                         break;                                                                                                            
                                 } 
                             ?>
@@ -241,7 +241,7 @@ while( have_posts() ) {
                     <?php } ?>
 
                     <a href="#promo-map" class="riconmap">
-                        <?php _e( 'localización', 'flaats' ); ?> <i class="fa fa-map-marker-alt"></i>                     
+                        <?php _e( 'localización', 'project045' ); ?> <i class="fa fa-map-marker-alt"></i>                     
                     </a>
                     
                     <div class="cal_div">
@@ -249,12 +249,12 @@ while( have_posts() ) {
                         	<div class="cal_bg">
                             	<h6><span><?php echo strtoupper( $finish_month ); ?></span><br> <?php echo $finish_year; ?></h6>
                             </div>
-                            <p class="dont-break-out"><?php _e( 'COMPLETADO', 'flaats' ); ?></p>
+                            <p class="dont-break-out"><?php _e( 'COMPLETADO', 'project045' ); ?></p>
                             <p></p>
                         </div>
                         
                         <div class="visitcal">
-                        	<a href="#" data-toggle="modal" data-target="#modal-request-visit"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon-home.png" alt="visit"><br><?php _e( 'Solicitar visita', 'flaats' ); ?></a>
+                        	<a href="#" data-toggle="modal" data-target="#modal-request-visit"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon-home.png" alt="visit"><br><?php _e( 'Solicitar visita', 'project045' ); ?></a>
                         </div>
                     </div>
                     
@@ -276,19 +276,19 @@ while( have_posts() ) {
                     <?php if( $dossier_url != '' ) { ?>
                 	<li>
                         <a href="#" class="button-download dossier" data-which="dossier" data-toggle="modal" data-target="#modal-download-dossier">
-                            <?php _e( 'DESCARGAR DOSSIER', 'flaats' ); ?>
+                            <?php _e( 'DESCARGAR DOSSIER', 'project045' ); ?>
                         </a>
                     </li>
                     <?php } ?>
 
                     <li>
                         <a href="#" class="button-download plans" data-which="plans" data-toggle="modal" data-target="#modal-download-plans">
-                            <?php _e( 'SOLICITAR PLANOS', 'flaats' ); ?>
+                            <?php _e( 'SOLICITAR PLANOS', 'project045' ); ?>
                         </a>
                     </li>                    
                     <li>
                         <a href="#" class="button-download prices" data-which="prices" data-toggle="modal" data-target="#modal-download-prices">
-                            <?php _e( 'SOLICITAR PRECIOS', 'flaats' ); ?>
+                            <?php _e( 'SOLICITAR PRECIOS', 'project045' ); ?>
                         </a>
                     </li>
                 </ul>
@@ -307,7 +307,7 @@ while( have_posts() ) {
 <section class="amenities">
 	<div class="container">
     <div class="row">
-    	<h2><?php _e( 'Características', 'flaats' ); ?></h2>
+    	<h2><?php _e( 'Características', 'project045' ); ?></h2>
         <ul>
             
             <?php foreach( $promo_amenities as $amenity ) { ?>
@@ -431,24 +431,24 @@ while( have_posts() ) {
                         <div class="button-wrapper">
                             <div class="col_button col_button_mobile">
                                 <button data-type="educacion" type="" class="boton_maps">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/educacion.png" alt="icon">  <span><?php _e( 'Educativos', 'flaats' ); ?></span>
+                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/educacion.png" alt="icon">  <span><?php _e( 'Educativos', 'project045' ); ?></span>
                                 </button>
                             </div>
                             <div class="col_button">
                                 <button data-type="sanitario" type="" class="boton_maps">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sanitario.png" alt="icon"> <span><?php _e( 'Sanitarios', 'flaats' ); ?></span></button>
+                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sanitario.png" alt="icon"> <span><?php _e( 'Sanitarios', 'project045' ); ?></span></button>
                             </div>
                             <div class="col_button">
                                 <button data-type="comercial" type="" class="boton_maps">
-                                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/compras.png" alt="icon"> <span><?php _e( 'Compras', 'flaats' ); ?></span></button>
+                                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/compras.png" alt="icon"> <span><?php _e( 'Compras', 'project045' ); ?></span></button>
                             </div>
                             <div class="col_button">
                                 <button data-type="restaurantes" type="" class="boton_maps">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/utensils.png" alt="icon"> <span><?php _e( 'Restaurantes', 'flaats' ); ?></span></button>
+                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/utensils.png" alt="icon"> <span><?php _e( 'Restaurantes', 'project045' ); ?></span></button>
                             </div>
                             <div class="col_button">
                                 <button data-type="transportes" type="" class="boton_maps">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/transportes.png" alt="icon"> <span><?php _e( 'Transportes', 'flaats' ); ?></span></button>
+                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/transportes.png" alt="icon"> <span><?php _e( 'Transportes', 'project045' ); ?></span></button>
                             </div>
                         </div>
                     </div>
@@ -466,8 +466,8 @@ while( have_posts() ) {
 <div class="member_application">
 <a name="contact-form"></a>
             	<div class="member_application_heading">
-                <h2><?php _e( 'Contacte con nosotros', 'flaats' ); ?></h2>
-                	<p><?php _e( 'Si está interesado en obtener más información sobre esta promoción por favor rellene el siguiente formulario.', 'flaats' ); ?></p>
+                <h2><?php _e( 'Contacte con nosotros', 'project045' ); ?></h2>
+                	<p><?php _e( 'Si está interesado en obtener más información sobre esta promoción por favor rellene el siguiente formulario.', 'project045' ); ?></p>
                 </div>
                 
                 <div class="row">
@@ -483,7 +483,7 @@ while( have_posts() ) {
 <section class="lifestyle_promo">
 	<div class="container">
     		<div class="row">
-            	<div class="col-md-12"><h2><?php _e( 'LifeStyle <span>Promoción</span>', 'flaats' ); ?></h2></div>
+            	<div class="col-md-12"><h2><?php _e( 'LifeStyle <span>Promoción</span>', 'project045' ); ?></h2></div>
             </div>
             <div class="row">
             	<div class="lifegallery">
@@ -513,7 +513,7 @@ while( have_posts() ) {
         	
         	<div class="col-md-12">
         	<div class="dela_innerzona clearfix">
-            	<h2><?php _e( 'Intereses <span>de la Zona</span>', 'flaats' ); ?></h2>
+            	<h2><?php _e( 'Intereses <span>de la Zona</span>', 'project045' ); ?></h2>
             	<div class="col-md-6">
         			<div class="progress_br clearfix">
                         <?php foreach( $zone_data['lifestyle1'] as $text => $score ) { ?>
@@ -560,7 +560,7 @@ while( have_posts() ) {
 <section class="merbella_slider zona_bg">
 	<div class="container">
     	<div class="row">
-        	<h2><?php _e( 'Ver más promociones <br> <span>en', 'flaats' ); ?> <?php echo $zone_data['name']; ?></span></h2>
+        	<h2><?php _e( 'Ver más promociones <br> <span>en', 'project045' ); ?> <?php echo $zone_data['name']; ?></span></h2>
             
             <div class="merbella_slider_area"> 
             
@@ -587,9 +587,9 @@ while( have_posts() ) {
                                     <h3><span class="notranslate"><?php echo $development['zone']; ?></span></h3>
                                     <p class="group inner list-group-item-text"><?php echo $development['excerpt']; ?></p>
                                 <ul>
-                                    <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon17.png" alt=""> <p><span><?php _e( 'desde', 'flaats' ); ?></span> <?php echo $development['price_min']; ?></p></li>
-                                    <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon18.png" alt=""><p><span><?php _e( 'desde', 'flaats' ); ?></span> <?php echo $development['rooms_min']; ?> <?php Flaats_Functions::render_rooms_literal( $development['rooms_min'] ); ?></p> </li>
-                                    <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon19.png" alt=""><p><span><?php _e( 'desde', 'flaats' ); ?></span> <?php echo $development['size_min']; ?> m2</p></li>
+                                    <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon17.png" alt=""> <p><span><?php _e( 'desde', 'project045' ); ?></span> <?php echo $development['price_min']; ?></p></li>
+                                    <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon18.png" alt=""><p><span><?php _e( 'desde', 'project045' ); ?></span> <?php echo $development['rooms_min']; ?> <?php Project045_Functions::render_rooms_literal( $development['rooms_min'] ); ?></p> </li>
+                                    <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon19.png" alt=""><p><span><?php _e( 'desde', 'project045' ); ?></span> <?php echo $development['size_min']; ?> m2</p></li>
                                 </ul>
                                 </div>
                             </div>
@@ -606,7 +606,7 @@ while( have_posts() ) {
 
 
 
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo Flaats_Definitions::$maps_api_key; ?>&libraries=places&language=es&callback=initialise"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo Project045_Definitions::$maps_api_key; ?>&libraries=places&language=es&callback=initialise"></script>
 
         <script>
             var template_url = '<?php echo get_stylesheet_directory_uri(); ?>';

@@ -3,7 +3,7 @@
 $page_contact = get_page_by_path( 'contact' );
 
 $offices = array();
-while( have_rows( '_flaats_contact_offices', $page_contact->ID ) ) {
+while( have_rows( '_project045_contact_offices', $page_contact->ID ) ) {
     the_row();
     $address = get_sub_field( 'address' );
     $address = str_replace( "\r\n", "<br>", $address );
@@ -21,7 +21,7 @@ while( have_rows( '_flaats_contact_offices', $page_contact->ID ) ) {
         <div id="map" style="width:100%;height:900px;"></div>
     </div>
     <div class="sec_con_right">
-    	<h3 class="title"><?php _e( 'Contacto', 'flaats' ); ?></h3>
+    	<h3 class="title"><?php _e( 'Contacto', 'project045' ); ?></h3>
         <?php echo do_shortcode( '[cf7-form cf7key="formulario-de-contacto"]' ); ?>
     </div>
 </section>
@@ -29,7 +29,7 @@ while( have_rows( '_flaats_contact_offices', $page_contact->ID ) ) {
 
 
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?language=es&key=<?php echo Flaats_Definitions::$maps_api_key; ?>&callback=initialise"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?language=es&key=<?php echo Project045_Definitions::$maps_api_key; ?>&callback=initialise"></script>
 
 <script>
     var template_url = '<?php echo get_stylesheet_directory_uri(); ?>';
