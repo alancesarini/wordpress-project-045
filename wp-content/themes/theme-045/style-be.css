@@ -1,0 +1,40 @@
+/* Begin Images */
+.post-content p img { padding: 0; max-width: 100%; height: auto; }
+/*  Using 'class="alignright"' on an image will (who would've thought?!) align the image to the right. And using 'class="centered',
+  will of course center the image. This is much better than using align="center", being much more futureproof (and valid) */
+.post-content img.centered { display: block; margin-left: auto; margin-right: auto; }
+.post-content img.alignright { padding: 4px; margin: 0 0 0 10px; display: inline; }
+.post-content img.alignleft { padding: 4px; margin: 0 10px 0 0; display: inline; }
+.post-content .alignright { float: right; }
+.post-content .alignleft { float: left; }
+/* End Images */
+
+/* Begin Calendar */
+.post-content #wp-calendar { empty-cells: show; margin: 10px auto 0; width: 155px; }
+.post-content #wp-calendar #next a { padding-right: 10px; text-align: right; }
+.post-content #wp-calendar #prev a { padding-left: 10px; text-align: left; }
+.post-content #wp-calendar a { display: block; }
+.post-content #wp-calendar caption { text-align: center; width: 100%; }
+.post-content #wp-calendar td { padding: 3px 0; text-align: center; }
+.post-content #wp-calendar td.pad:hover { /* Doesn't work in IE */ background-color: #fff; }
+/* End Calendar */
+
+/* Captions */
+.post-content .aligncenter, .post-content div.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.post-content .wp-caption { border: 1px solid #ddd; text-align: center; background-color: #f3f3f3; padding-top: 4px; margin: 10px; border-radius: 3px; -moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px; }
+.post-content .wp-caption img { margin: 0; padding: 0; border: 0 none; }
+.post-content .wp-caption p.wp-caption-text { font-size: 11px; line-height: 17px; padding: 0 4px 5px; margin: 0; }
+/* End captions */
+
+/* Gallery */
+.post-content .gallery { margin: 0 auto 18px; }
+  .post-content .gallery .gallery-item { float: left; margin-top: 0; text-align: center; width: 33%; }
+    .post-content .gallery-columns-2 .gallery-item { width: 50%; }
+    .post-content .gallery-columns-4 .gallery-item { width: 25%; }
+  .post-content .gallery img { border: 2px solid #cfcfcf; }
+  .post-content .gallery-columns-2 .attachment-medium { max-width: 92%; height: auto; }
+  .post-content .gallery-columns-4 .attachment-thumbnail { max-width: 84%; height: auto; }
+  .post-content .gallery .gallery-caption { color: #888; font-size: 12px; margin: 0 0 12px; }
+  .post-content .gallery dl { margin: 0; }
+  .post-content .gallery br+br { display: none; }
+/* Gallery */

@@ -1,0 +1,551 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Language: es_ES\n"
+"X-Generator: Poedit 2.1.1\n"
+
+#. Text in function
+#: flaats/includes/class_functions.php:618
+msgid "ACCEDER"
+msgstr "LOGIN"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:536
+#: flaats/includes/class_functions.php:545
+msgid "Acceder"
+msgstr "Login"
+
+#. Text in echo
+#: flaats/template-membership.php:67
+msgid "Solicitud"
+msgstr "Application"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:553
+msgid "Aviso Legal y la Ley de Protección de Datos"
+msgstr "disclaimer"
+
+#. Text in function
+#: flaats/includes/class_functions.php:618
+msgid "Aún no has guardado ningún favorito."
+msgstr "You don't have any favorites yet."
+
+#. Text in echo
+#: flaats/includes/class_functions.php:342
+msgid "BUSCAR"
+msgstr "SEARCH"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:281 flaats/partials/home-slider.php:25
+msgid "BUSCAR EN EL MAPA"
+msgstr "FIND ON MAP"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:281 flaats/partials/home-slider.php:25
+msgid "BUSCAR PROMOCIONES"
+msgstr "FIND"
+
+#. Text in echo
+#: flaats/single-zona.php:74 flaats/includes/class_functions.php:376
+#: flaats/partials/home-slider.php:31
+msgid "BUSCAR LIFESTYLE"
+msgstr "LIFESTYLE SEARCH"
+
+#. Text in echo
+#: flaats/partials/home-benefits.php:24
+msgid "Beneficios de comprar con"
+msgstr "Benefits of buying with"
+
+#. Text in echo
+#: flaats/single-promocion.php:120
+msgid "COMPLETADO"
+msgstr "COMPLETION"
+
+#. Text in echo
+#: flaats/template-zonas.php:60
+msgid "CONOCER LA ZONA"
+msgstr "VIEW AREA"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:203
+#: flaats/includes/class_functions.php:412
+msgid "CULTURA"
+msgstr "CULTURE"
+
+#. Text in echo
+#: flaats/single-promocion.php:148
+msgid "licencia concedida"
+msgstr "building permit"
+
+#. Text in echo
+#: flaats/single-promocion.php:148
+msgid "licencia solicitada"
+msgstr "licence applied"
+
+#. Text in echo
+#: flaats/single-promocion.php:148
+msgid "licencia de primera ocupación"
+msgstr "occupancy licence"
+
+#. Text in echo
+#: flaats/single-promocion.php:162
+msgid "Características"
+msgstr "General Features"
+
+#. Text in echo
+#: flaats/single-promocion.php:258
+msgid "Compras"
+msgstr "Shopping"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:605
+msgid "Confirmar contraseña"
+msgstr "Repeat password"
+
+#. Text in echo
+#: flaats/single-promocion.php:284
+msgid "Contacte con nosotros"
+msgstr "Contact us"
+
+#. Text in echo
+#: flaats/partials/contact-map.php:5
+msgid "Contacto"
+msgstr "Contact"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:604
+msgid "Contraseña"
+msgstr "Password"
+
+#. Text in echo
+#: flaats/single-promocion.php:143
+msgid "DESCARGAR DOSSIER"
+msgstr "DOWNLOAD DOSSIER"
+
+#. Text in echo
+#: flaats/single-promocion.php:144
+msgid "SOLICITAR PLANOS"
+msgstr "REQUEST FLOOR PLANS"
+
+#. Text in echo
+#: flaats/single-promocion.php:145
+msgid "SOLICITAR PRECIOS"
+msgstr "REQUEST PRICES"
+
+#. Text in echo
+#: flaats/single-promocion.php:249
+msgid "Educativos"
+msgstr "Schools"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:603
+msgid "Email"
+msgstr "Email"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:567
+msgid "Enviar"
+msgstr "Send"
+
+#. Text in echo
+#: flaats/404.php:11
+msgid "Error 404"
+msgstr "Error 404"
+
+#. Text in echo
+#: flaats/single-zona.php:60
+msgid "Este area es buena para:"
+msgstr "This area is good for:"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:244
+#: flaats/includes/class_functions.php:453
+msgid "FAMILIA"
+msgstr "FAMILY"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:194
+#: flaats/includes/class_functions.php:403
+msgid "GOLF"
+msgstr "GOLF"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:136
+#: flaats/includes/class_functions.php:351
+#: flaats/template-lista-promociones.php:40
+msgid "Habitaciones"
+msgstr "Rooms"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:553
+msgid "He leído y acepto el"
+msgstr "I have read and accept the"
+
+#. Text in echo
+#: flaats/template-servicios.php:55 flaats/template-servicios.php:137
+msgid "INFÓRMATE"
+msgstr "MORE INFO"
+
+#. Text in echo
+#: flaats/template-membership.php:68 flaats/single-promocion.php:285
+msgid "Si es usted un promotor interesado en unirse a la red de DreamHomes, por favor rellene el formulario y un representante se pondrá en contacto con usted en breve."
+msgstr "If you are a developer interested in joining DreamsHomes Network, please fill the next form and a representative will get back to you shortly."
+
+#. Text in echo
+#: flaats/single-promocion.php:326
+msgid "Intereses <span>de la Zona</span>"
+msgstr "Things of interest <span>in this area</span>"
+
+#. Text in echo
+#: flaats/single-promocion.php:301
+msgid "LifeStyle <span>Promoción</span>"
+msgstr "LifeStyle <span>Development</span>"
+
+#. Text in echo
+#: flaats/404.php:20
+msgid "Lo sentimos, no hemos encontrado lo que buscaba."
+msgstr "Sorry, we couldn't find what you were looking for."
+
+#. Text in echo
+#: flaats/includes/class_functions.php:132
+#: flaats/includes/class_functions.php:347
+msgid "MOSTRAR FILTROS"
+msgstr "SHOW FILTERS"
+
+#. Text in echo
+#: flaats/template-membership.php:54
+msgid "Miembros"
+msgstr "Members"
+
+#. Text in echo
+#: flaats/footer.php:7
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:602
+msgid "Nombre de usuario"
+msgstr "Username"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:566
+msgid "Nombre de usuario o email"
+msgstr "Username or email"
+
+#. Text in echo
+#: flaats/single-zona.php:141
+msgid "Otras zonas que"
+msgstr "More areas"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:217
+#: flaats/includes/class_functions.php:426
+msgid "PLAYA / BAÑO"
+msgstr "BEACH"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:235
+#: flaats/includes/class_functions.php:444
+msgid "PUERTO DEPORTIVO"
+msgstr "LEISURE PORT"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:120
+#: flaats/includes/class_functions.php:334
+msgid "Precio máximo"
+msgstr "Max price"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:112
+#: flaats/includes/class_functions.php:326
+msgid "Precio mínimo"
+msgstr "Min price"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:101
+#: flaats/includes/class_functions.php:315
+msgid "Tipo"
+msgstr "Type"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:77
+#: flaats/includes/class_functions.php:289
+msgid "Area"
+msgstr "Area"
+
+#. Text in echo
+#: flaats/single-promocion.php:78 flaats/single-promocion.php:389
+#: flaats/single-zona.php:120 flaats/template-busqueda-promociones.php:118
+#: flaats/template-lista-promociones.php:64
+msgid "Promoción en"
+msgstr "Development in"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:606
+msgid "REGISTRARSE"
+msgstr "REGISTER"
+
+#. Text in function
+#: flaats/includes/class_functions.php:618
+msgid "REGISTRO"
+msgstr "REGISTER"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:226
+#: flaats/includes/class_functions.php:435
+msgid "RESTAURANTES"
+msgstr "RESTAURANTS"
+
+#. Text in echo
+#: flaats/footer.php:7
+msgid "Recibe nuestra"
+msgstr "Receive our"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:563
+msgid "Nueva contraseña"
+msgstr "New password"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:595
+msgid "Registro"
+msgstr "Register"
+
+#. Text in echo
+#: flaats/single-promocion.php:262
+msgid "Restaurantes"
+msgstr "Restaurants"
+
+#. Text in echo
+#: flaats/footer.php:14
+msgid "SUSCRÍBETE"
+msgstr "SUBSCRIBE"
+
+#. Text in echo
+#: flaats/single-promocion.php:254
+msgid "Sanitarios"
+msgstr "Hospitals"
+
+#. Text in echo
+#: flaats/footer.php:8
+msgid "Sed maximus leo at porta accumsan. In hac habitasse platea dictumst. Mauris eleifend vehicula tincidunt."
+msgstr "Weekly updates with all the latest news and the best offers on our new developments."
+
+#. Text in echo
+#: flaats/template-contacto.php:79
+msgid "Social media"
+msgstr "Social media"
+
+#. Text in echo
+#: flaats/single-promocion.php:125
+msgid "Solicitar visita"
+msgstr "Request a visit"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:185
+#: flaats/includes/class_functions.php:394
+msgid "TIENDAS"
+msgstr "SHOPPING"
+
+#. Text in echo
+#: flaats/single-promocion.php:266
+msgid "Transportes"
+msgstr "Transportation"
+
+#. Text in echo
+#: flaats/partials/home-dream.php:29
+msgid "VER AREAS"
+msgstr "VIEW AREAS"
+
+#. Text in echo
+#: flaats/single-zona.php:152 flaats/template-zonas.php:59
+#: flaats/partials/home-areas.php:37
+msgid "VER PROMOCIONES"
+msgstr "VIEW DEVELOPMENTS"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:176
+#: flaats/includes/class_functions.php:385
+msgid "VIDA NOCTURNA"
+msgstr "NIGHTLIFE"
+
+#. Text in echo
+#: flaats/single-zona.php:104
+msgid "Ver más promociones"
+msgstr "More developments"
+
+#. Text in echo
+#: flaats/single-promocion.php:371
+msgid "Ver más promociones <br> <span>en"
+msgstr "More developments <br> <span>in"
+
+#. Text in echo
+#: flaats/partials/home-areas.php:27
+msgid "areas"
+msgstr "areas"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:127
+#: flaats/includes/class_functions.php:255
+#: flaats/includes/class_functions.php:464
+msgid "buscar"
+msgstr "search"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:549
+msgid "campos obligatorios"
+msgstr "required fields"
+
+#. Text in echo
+#: flaats/single-promocion.php:99 flaats/single-promocion.php:100
+#: flaats/single-promocion.php:101 flaats/single-promocion.php:111
+#: flaats/single-promocion.php:392 flaats/single-promocion.php:393
+#: flaats/single-promocion.php:394 flaats/single-zona.php:123
+#: flaats/single-zona.php:124 flaats/single-zona.php:125
+#: flaats/template-lista-promociones.php:67
+#: flaats/template-lista-promociones.php:68
+#: flaats/template-lista-promociones.php:69
+#: flaats/partials/home-developments.php:26
+#: flaats/partials/home-developments.php:27
+#: flaats/partials/home-developments.php:42
+#: flaats/partials/home-developments.php:43
+#: flaats/partials/home-developments.php:61
+#: flaats/partials/home-developments.php:62
+#: flaats/partials/home-developments.php:89
+#: flaats/partials/home-developments.php:90
+msgid "desde"
+msgstr "from"
+
+#. Text in echo
+#: flaats/partials/home-developments.php:17
+msgid "promociones"
+msgstr "developments"
+
+#. Text in echo
+#: flaats/single-zona.php:104
+msgid "en"
+msgstr "in"
+
+#. Text in echo
+#: flaats/single-promocion.php:100 flaats/single-promocion.php:393
+#: flaats/single-zona.php:124 flaats/template-busqueda-promociones.php:122
+#: flaats/template-lista-promociones.php:68
+msgid "hab"
+msgstr "room"
+
+#. Text in echo
+#: flaats/single-promocion.php:100 flaats/single-promocion.php:393
+#: flaats/single-zona.php:124 flaats/template-busqueda-promociones.php:122
+#: flaats/template-lista-promociones.php:68
+msgid "habs"
+msgstr "rooms"
+
+#. Text in echo
+#: flaats/single-zona.php:85 flaats/partials/home-developments.php:27
+#: flaats/partials/home-developments.php:43
+#: flaats/partials/home-developments.php:62
+#: flaats/partials/home-developments.php:90
+msgid "habitaciones"
+msgstr "rooms"
+
+#. Text in echo
+#: flaats/single-promocion.php:113
+msgid "localización"
+msgstr "location"
+
+#. Text in echo
+#: flaats/single-promocion.php:112
+msgid "más info"
+msgstr "more info"
+
+#. Text in echo
+#: flaats/single-zona.php:141
+msgid "pueden interesarte"
+msgstr "may be of your interest"
+
+#. Text in echo
+#: flaats/partials/home-services.php:15
+msgid "servicios"
+msgstr "services"
+
+#. Text in echo
+#: flaats/includes/class_functions.php:544
+msgid "¿Ha olvidado su contraseña?"
+msgstr "Forgot password?"
+
+#. Text in echo
+#: flaats/template-lista-promociones.php:37
+msgid "Ordenar por"
+msgstr "Order by"
+
+#. Text in echo
+#: flaats/partials/modals-development.php:26
+msgid "Descargar PDF"
+msgstr "Instant download PDF"
+
+#: flaats/template-lista-promociones.php:38
+msgid "Precio"
+msgstr "Price"
+
+#: flaats/template-lista-promociones.php:39
+msgid "Tamaño"
+msgstr "Size"
+
+#: flaats/single-promocion.php:310
+msgid "Si está interesado en obtener más información sobre esta promoción por favor rellene el siguiente formulario."
+msgstr "If you are a interested in getting more information about this development please fill the next form."
+
+#: flaats/index.php:5
+msgid "Noticias"
+msgstr "News"
+
+#: flaats/comments.php:54
+msgid "Responder"
+msgstr "Reply"
+
+#: flaats/single.php:36
+msgid "comentarios"
+msgstr "comments"
+
+#: flaats/single.php:51
+msgid "Cancelar respuesta"
+msgstr "Cancel reply"
+
+#: flaats/single.php:52
+msgid "Responder a"
+msgstr "Reply to"
+
+#: flaats/single.php:46
+msgid "Name"
+msgstr ""
+
+#: flaats/index.php:48
+msgid "No hemos encontrado ninguna noticia."
+msgstr "Nothing found."
+
+#: flaats/header.php:12
+msgid "Encuentre la casa de sus sueños en las mejores promociones de la Costa del Sol"
+msgstr "Find your dream home at the best Costa del Sol developments"
+
+#. Text in echo
+#: flaats/partials/modal-search.php:5
+msgid "Buscar noticias"
+msgstr "Search news"
+
+#. Text in echo
+#: flaats/template-contacto.php:58
+msgid "Horario Oficinas"
+msgstr "Opening Hours"
+
+#. Text in echo
+#: flaats/template-busqueda-promociones.php:93
+#: flaats/template-busqueda-promociones.php:102
+msgid "Ver promoción"
+msgstr "View development"
